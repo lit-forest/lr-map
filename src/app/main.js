@@ -11,8 +11,4 @@ injectTapEventPlugin();
 // For more details see: https://facebook.github.io/react/docs/top-level-api.html#react.render
 render(<App />, document.getElementById('root'));
 
-/**
- * In this file, we create a React component
- * which incorporates components provided by Material-UI.
- */
 
