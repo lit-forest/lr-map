@@ -25,6 +25,7 @@ const config = {
   output: {
     path: buildPath, // Path of output file
     filename: 'app.js',
+    chunkFilename: '[name]/[name].js' //异步模块文件
   },
   plugins: [
     // Enables Hot Modules Replacement

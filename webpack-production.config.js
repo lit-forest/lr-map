@@ -13,6 +13,7 @@ const config = {
   output: {
     path: buildPath, // Path of output file
     filename: 'app.js', // Name of output file
+    chunkFilename: '[name]/[name].js' //异步模块文件
   },
   plugins: [
     // Define production build to allow React to strip out unnecessary checks
