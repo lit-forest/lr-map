@@ -1,0 +1,12 @@
+.modular{
+    z-index: 2000;
+    position: absolute;
+    right: 0px;
+    top: 200px;
+    height: 600px;
+    width: 330px;
+    opacity: .8;
+    box-shadow: -2px 2px 6px rgba(0,0,0,.3);
+    -webkit-user-select: none;
+    background-color:white;
+}

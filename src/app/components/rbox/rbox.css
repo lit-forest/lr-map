@@ -1,0 +1,12 @@
+.rbox {
+    z-index: 2000;
+    position: absolute;
+    left: 15px;
+    top: 60px;
+    height: 600px;
+    width: 400px;
+    opacity: .8;
+    box-shadow: 0 2px 6px rgba(0,0,0,.3);
+    -webkit-user-select: none;
+    background-color: white;
+}

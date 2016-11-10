@@ -12,7 +12,8 @@ class Map extends React.Component {
         let lrmap = L.map("map", {
             center: [28.41, 121.355],
             zoom: 5,
-            zoomControl: false
+            zoomControl: false,
+            attributionControl:false
         });
         let basemapLayer = new L.TileLayer('https://b.tiles.mapbox.com/v4/mapbox.run-bike-hike/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpbTgzcHQxMzAxMHp0eWx4bWQ1ZHN2NGcifQ.WVwjmljKYqKciEZIC3NfLA', {
             id: 'streetLayer'
@@ -23,7 +24,6 @@ class Map extends React.Component {
             position: 'bottomright'
         });
         lrmap.addControl(zoomControl);
-        lrmap.attributionControl = false;
 
         window.lrmap = lrmap;
     }
