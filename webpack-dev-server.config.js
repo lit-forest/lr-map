@@ -7,11 +7,13 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = {
   // Entry points to the project
-  entry: [
-    'webpack/hot/dev-server',
-    'webpack/hot/only-dev-server',
-    path.join(__dirname, '/src/app/main.js'),
-  ],
+  entry: {
+    index: [
+      'webpack/hot/dev-server',
+      'webpack/hot/only-dev-server',
+      path.join(__dirname, '/src/app/main.js')],
+    vendor: ['react', 'react-dom', 'react-router', 'leaflet']
+  },
   // Server Configuration options
   devServer: {
     contentBase: 'src/static', // Relative directory for base of server
@@ -34,10 +36,12 @@ const config = {
     new webpack.NoErrorsPlugin(),
     // Moves files
     new TransferWebpackPlugin([
-      {from: 'static'},
+      { from: 'static' },
     ], path.resolve(__dirname, 'src')),
     //独立打包样式
-    new ExtractTextPlugin('style.css')
+    new ExtractTextPlugin('style.css'),
+    //独立打包第三方文件
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js')
   ],
   module: {
     loaders: [
@@ -48,13 +52,13 @@ const config = {
         exclude: [nodeModulesPath],
       },
       {
-				test: /\.css$/,
-				loader: ExtractTextPlugin.extract('style', 'css?modules')
-			},
-			{
-				test: /\.(png|jpg)$/,
-				loader: 'url-loader?limit=8192&name=images/[name].[ext]'
-			}
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style', 'css?modules')
+      },
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader?limit=8192&name=images/[name].[ext]'
+      }
     ]
   }
 };

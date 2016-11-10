@@ -9,7 +9,7 @@ class Search extends Component {
                 <header className={styles.searchbox}>
                     <img className={styles.logo} src={logoSrc} draggable="false" />
                     <div className={styles.iptbox}>
-                        <input type="text" ref="searchVal" id="searchipt" placeholder="搜索位置、公交站、地铁站" className={styles.searchipt} />
+                        <input type="text" ref="searchVal" id="searchipt" placeholder="搜索地名、公交站、地铁站" className={styles.searchipt} />
                     </div>
                     <span id="separator" className={styles.separator}></span>
                     <div className={styles.direntry} id="searchbtn" title="搜索" onClick={() => this.update()}>
