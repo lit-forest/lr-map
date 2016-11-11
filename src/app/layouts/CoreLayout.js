@@ -5,20 +5,37 @@ import Rbox from '../components/rbox/Rbox';
 import ToolBar from '../components/toolBar/ToolBar';
 import Bucket from '../components/bucket/Bucket';
 
+
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { deepOrange500 } from 'material-ui/styles/colors';
+
+injectTapEventPlugin();
+
+const muiTheme = getMuiTheme({
+    palette: {
+        accent1Color: deepOrange500
+    }
+});
+
 const CoreLayout = ({children}) => {
     return (
-        <div>
-            <Map></Map>
-            <Search></Search>
-            <Rbox></Rbox>
-            <ToolBar></ToolBar>
-            <Bucket child={children}></Bucket>
-        </div>
+        <MuiThemeProvider muiTheme={muiTheme}>
+            <div>
+                <Map></Map>
+                <Search></Search>
+                <Rbox></Rbox>
+                <ToolBar></ToolBar>
+                <Bucket child={children}></Bucket>
+            </div>
+        </MuiThemeProvider>
     )
 }
 
 CoreLayout.propTypes = {
     children: PropTypes.element
 }
+
 
 export default CoreLayout;

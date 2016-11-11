@@ -7,3 +7,6 @@ html, body, #map {
   position: absolute;
   overflow: hidden;
 }
+a{
+  text-decoration : none;
+}

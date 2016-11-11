@@ -10,3 +10,8 @@
     -webkit-user-select: none;
     background-color:white;
 }
+.link{
+    color: red;
+    margin: 10px 10px;
+    text-align: 'center';
+}
