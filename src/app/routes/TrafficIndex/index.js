@@ -1,7 +1,16 @@
-import { injectReducer } from '../../store/reducers'
+import { injectReducer } from '../../store/reducers';
+import OD from './routes/OD';
+import Holiday from './routes/Holiday';
 
-export default (store) => ({
+const createRoutes = (store) => ({
     path: 'trafficIndex',
+    getChildRoutes(partialNextState, cb) {
+        require.ensure([], (require) => {
+            cb(null, [
+                Holiday(store)
+            ])
+        })
+    },
     getComponent(nextState, cb) {
         require.ensure(
             [],
@@ -12,3 +21,5 @@ export default (store) => ({
             'trafficIndex')
     }
 })
+
+export default createRoutes

@@ -5,25 +5,12 @@ import Subheader from 'material-ui/Subheader';
 import IconButton from 'material-ui/IconButton';
 import NavigationClose from 'material-ui/svg-icons/hardware/keyboard-arrow-left';
 
+import Nav from '../../../components/Nav/Nav';
 import styles from './counter.css';
-
-const style = {
-    back: {
-        position: 'absolute',
-        top: '-1px',
-        left: '0px',
-        color:'red'
-    }
-}
 
 export const Counter = (props) => (
     <div style={{ margin: '0 auto' }}>
-        <Subheader>
-            <Link to={'/'} >
-                <IconButton style={style.back}><NavigationClose/></IconButton>
-                <div className={styles.back}>首页</div>
-            </Link>
-        </Subheader>
+        <Nav parentUrl={'/'} parentName={'首页'}></Nav>
         <h2>Counter: {props.counter}</h2>
         <button className='btn btn-default' onClick={props.increment}>
             Increment
