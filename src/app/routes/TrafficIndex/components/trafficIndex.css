@@ -1,0 +1,10 @@
+.back{
+    position: absolute;
+    top: -2px;
+    left: 31px;
+}
+.arrow_left{
+    position: absolute;
+    top: -1px;
+    left: -15px;
+}

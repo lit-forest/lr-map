@@ -11,7 +11,7 @@ class Map extends React.Component {
     componentDidMount() {
         let lrmap = L.map("map", {
             center: [28.41, 121.355],
-            zoom: 5,
+            zoom: 12,
             zoomControl: false,
             attributionControl:false
         });

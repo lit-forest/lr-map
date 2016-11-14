@@ -13,7 +13,7 @@
 .searchbox {
     position: relative;
     z-index: 2201;
-    width: 400px;
+    width: 345px;
     height: 45px;
     background: #fff;
     box-shadow: 1px 2px 1px rgba(0,0,0,.1);
@@ -25,7 +25,7 @@
     text-indent: 8px;
     z-index: 2200;
     border: none;
-    width: 276px;
+    width: 226px;
     height: 20px;
     line-height: 20px;
     padding: 0;
@@ -33,11 +33,11 @@
 }
 .searchbox .iptbox {
     left: 50px;
-    width: 310px;
+    width: 345px;
     z-index: 2202;
     border-radius: 2px;
 }
-.searchbox .iptbox, .searchbox .logo {
+.logo {
 	left: 8px;
     top: 6px;
     height: 34px;

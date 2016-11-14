@@ -5,14 +5,14 @@ import CounterRoute from './Counter'
 
 const createRoutes = (store) => (
     {
-    path: '/',
-    component: CoreLayout,
-    // indexRoute: TrafficIndex(store),
-    childRoutes: [
-        CounterRoute(store),
-        Signal(store),
-        TrafficIndex(store)
-    ]
-})
+        path: '/',
+        component: CoreLayout,
+        // indexRoute: TrafficIndex(store),
+        childRoutes: [
+            CounterRoute(store),
+            Signal(store),
+            TrafficIndex(store)
+        ]
+    })
 
 export default createRoutes

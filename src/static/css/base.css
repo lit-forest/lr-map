@@ -6,6 +6,7 @@ html, body, #map {
   background-color:#142736;
   position: absolute;
   overflow: hidden;
+  font-family: 'Microsoft Yahei','Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 a{
   text-decoration : none;
