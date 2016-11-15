@@ -19,6 +19,12 @@ const muiTheme = getMuiTheme({
     }
 });
 
+/**
+ * @author sylvenas
+ * @doc 首页整体布局
+ * @param {React Component} {children}
+ * @returns
+ */
 const CoreLayout = ({children}) => {
     return (
         <MuiThemeProvider muiTheme={muiTheme}>

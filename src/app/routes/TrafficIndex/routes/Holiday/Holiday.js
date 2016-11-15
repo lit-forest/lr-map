@@ -1,6 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import Nav from '../../../../components/Nav/Nav';
 
+/**
+ * @author sylvenas
+ * @doc 交通节假日
+ * @class Holiday
+ * @extends {Component}
+ */
 class Holiday extends Component {
 
     componentWillMount() {
@@ -15,6 +21,10 @@ class Holiday extends Component {
             </div>
         );
     }
+    componentWillUnmount() {
+        console.log('leave Holiday')
+    }
+    
 }
 
 Holiday.propTypes = {

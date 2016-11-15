@@ -7,7 +7,8 @@ const createRoutes = (store) => ({
     getChildRoutes(partialNextState, cb) {
         require.ensure([], (require) => {
             cb(null, [
-                Holiday(store)
+                Holiday(store),
+                OD(store)
             ])
         })
     },
