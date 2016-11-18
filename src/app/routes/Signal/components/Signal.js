@@ -17,7 +17,7 @@ class Signal extends Component {
     render() {
         return (
             <div>
-                <Nav parentUrl={'/'} parentName={'首页'}></Nav>
+                <Nav parentUrl={'/'} parentName={'首页'} nowName={'hello'}></Nav>
                 <h1>Signal</h1>
             </div>
         );

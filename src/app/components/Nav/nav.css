@@ -2,9 +2,20 @@
     position: absolute;
     top: -2px;
     left: 31px;
+    color: #252B33;
+}
+.now{
+    position: absolute;
+    top: -2px;
+    left: 140px;
+    color: black;
+    font-size: 110%;
 }
 .arrow_left{
     position: absolute;
     top: -1px;
     left: -15px;
+}
+.activeStyle{
+    color: #252B33;
 }

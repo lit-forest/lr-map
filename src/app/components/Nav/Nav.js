@@ -4,27 +4,33 @@ import { IndexLink, Link } from 'react-router';
 import Subheader from 'material-ui/Subheader';
 import IconButton from 'material-ui/IconButton';
 import ArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left';
+import Divider from 'material-ui/Divider';
 
 import styles from './nav.css';
 
 class Nav extends Component {
 
     render() {
-        const {parentUrl,parentName} = this.props;
+        const {parentUrl, parentName, nowName} = this.props;
         return (
-            <Subheader>
-                <Link to={parentUrl} >
-                    <IconButton className={styles.arrow_left}><ArrowLeft color={'#551A8B'} /></IconButton>
-                    <div className={styles.back}>{parentName}</div>
-                </Link>
-            </Subheader>
+            <div>
+                <Subheader>
+                    <Link to={parentUrl} className={styles.activeStyle} >
+                        <IconButton className={styles.arrow_left}><ArrowLeft color={'#252B33'} /></IconButton>
+                        <div className={styles.back}>{parentName}</div>
+                    </Link>
+                    <div className={styles.now}>{nowName}</div>
+                </Subheader>
+                <Divider />
+            </div>
         );
     }
 }
 
 Nav.propTypes = {
-    parentUrl:PropTypes.string.isRequired,
-    parentName: PropTypes.string.isRequired
+    parentUrl: PropTypes.string.isRequired,
+    parentName: PropTypes.string.isRequired,
+    nowName: PropTypes.string.isRequired
 };
 
 export default Nav;

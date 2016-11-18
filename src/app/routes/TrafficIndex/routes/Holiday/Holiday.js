@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import Divider from 'material-ui/Divider';
 import Nav from '../../../../components/Nav/Nav';
 
 /**
@@ -16,7 +17,7 @@ class Holiday extends Component {
     render() {
         return (
             <div>
-                <Nav parentUrl={'/trafficIndex'} parentName={'流量指数'}></Nav>
+                <Nav parentUrl={'/trafficIndex'} parentName={'流量指数'} nowName={'节假日'}></Nav>
                 <h1>Holiday</h1>
             </div>
         );

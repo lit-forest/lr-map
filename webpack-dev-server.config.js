@@ -17,17 +17,17 @@ const config = {
   // Server Configuration options
   devServer: {
     contentBase: 'src/static', // Relative directory for base of server
-    devtool: 'eval',
+    devtool: 'inline-source-map',
+    historyApiFallback: true,
     hot: true, // Live-reload
     inline: true,
-    port: 3000, // Port Number
+    port: 3232, // Port Number
     host: 'localhost', // Change to '0.0.0.0' for external facing server
   },
-  devtool: 'eval',
   output: {
     path: buildPath, // Path of output file
     filename: 'app.js',
-    chunkFilename: '[name]/[name].js' //异步模块文件
+    chunkFilename: '[name].chunk.js' //异步模块文件
   },
   plugins: [
     // Enables Hot Modules Replacement

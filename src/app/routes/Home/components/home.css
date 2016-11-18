@@ -1,0 +1,12 @@
+.imgs{
+    display: inline;
+}
+.imgs:hover{
+    opacity: 0.5
+}
+.title{
+    font-size: 10px;
+}
+.title:hover{
+    color:#1ec7e6;
+}

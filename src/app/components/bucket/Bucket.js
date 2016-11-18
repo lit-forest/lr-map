@@ -1,4 +1,8 @@
 import React, { Component, PropTypes } from 'react';
+
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
+import './an.css';
 import style from './bucket.css';
 import { IndexLink, Link } from 'react-router';
 import { GridList, GridTile } from 'material-ui/GridList';
@@ -68,46 +72,18 @@ class Bucket extends Component {
         super(props);
     }
     componentWillMount() {
-        console.log(this.props.child);
     }
     render() {
-        if (this.props.child === null)
             return (
                 <div id='modularCol' className={style.modular}>
-                    <div style={styles.root}>
-                        <GridList
-                            cellHeight={100}
-                            style={styles.gridList}
-                            >
-                            <Subheader>
-                                <Link to={'/'}><div>首页</div></Link>
-                            </Subheader>
-                            {tilesData.map((tile) => (
-                                <Link to={tile.route} key={tile.title} className={styles.link}>
-                                    <GridTile
-                                        title={<div className={style.title}>{tile.title}</div>}
-                                        titlePosition="bottom"
-                                        titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)">
-                                        <img src={tile.img} className={style.imgs} />
-                                    </GridTile>
-                                </Link>
-                            ))}
-                        </GridList>
-                    </div>
-
-                </div>
-            );
-        else
-            return (
-                <div id='modularCol' className={style.modular}>
-                    {this.props.child}
+                     
                 </div>
             );
     }
 }
 
 Bucket.propTypes = {
-    child: PropTypes.element
+    
 }
 
 export default Bucket;
