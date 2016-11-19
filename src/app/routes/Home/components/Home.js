@@ -13,6 +13,8 @@ const styles = {
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'space-around',
+        position: 'absolute',
+        width:'100%'
     },
     gridList: {
         width: 300,

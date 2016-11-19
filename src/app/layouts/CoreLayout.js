@@ -36,21 +36,32 @@ class CoreLayout extends Component {
     }
 
     render() {
-        const {children} = this.props;
+        const {children, location} = this.props;
         return (
             <div>
                 <Map></Map>
                 <Search></Search>
                 <Rbox></Rbox>
                 <ToolBar></ToolBar>
-                <div className={styles.modular}>{children}</div>
+                <div className={styles.modular}>
+                    <ReactCSSTransitionGroup
+                        component="div"
+                        transitionName='animation'
+                        transitionEnterTimeout={500}
+                        transitionLeaveTimeout={300}>
+                        {React.cloneElement(children, {
+                            key: location.pathname
+                        })}
+                    </ReactCSSTransitionGroup>
+                </div>
             </div>
         )
     }
 }
 
 CoreLayout.propTypes = {
-    children: PropTypes.element.isRequired
+    children: PropTypes.element.isRequired,
+    location: PropTypes.object.isRequired
 };
 
 export default CoreLayout;

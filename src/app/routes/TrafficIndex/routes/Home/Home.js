@@ -12,10 +12,12 @@ import ArrowRight from 'material-ui/svg-icons/hardware/keyboard-arrow-right';
 
 import Nav from '../../../../components/Nav/Nav';
 
+import styles from './home.css';
+
 class Home extends Component {
     render() {
         return (
-            <div>
+            <div className={styles.root}>
                 <Nav parentUrl={'/'} parentName={'首页'} nowName={'交通指数'}></Nav>
                 <MobileTearSheet>
                     <List>
