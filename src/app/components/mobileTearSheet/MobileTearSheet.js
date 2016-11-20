@@ -2,23 +2,11 @@ import React, { Component, PropTypes } from 'react';
 
 class MobileTearSheet extends Component {
 
-    static propTypes = {
-        children: PropTypes.node,
-        height: PropTypes.number.isRequired,
-    };
-
-    static defaultProps = {
-        height: 500,
-    };
-
     static contextTypes = {
         muiTheme: PropTypes.object.isRequired,
     };
-
     render() {
-        const {
-            prepareStyles,
-        } = this.context.muiTheme;
+        const {prepareStyles} = this.context.muiTheme;
 
         const styles = {
             root: {
@@ -47,6 +35,14 @@ class MobileTearSheet extends Component {
             </div>
         );
     }
+}
+
+MobileTearSheet.propTypes = {
+    children: PropTypes.node,
+    height: PropTypes.number.isRequired,
+}
+MobileTearSheet.defaultProps = {
+    height: 500,
 }
 
 export default MobileTearSheet;

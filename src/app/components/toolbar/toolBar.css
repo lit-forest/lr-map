@@ -1,8 +1,5 @@
 .usel {
     -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
     user-select: none;
     box-shadow: 0 2px 6px rgba(0,0,0,.3);
 }   
@@ -24,4 +21,81 @@
     position: relative;
     font-family: 'Microsoft Yahei','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size: 12px;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+ol, ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+/*layer_item*/
+.layerItemSpan {
+    float: left;
+    height: 36px;
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    padding: 20px 10px 0;
+    border-right: 1px #e5e5e5 solid;
+    background: url(../../../static/img/tools_layer_new.png) no-repeat;
+}
+
+.layerCtrl{
+    composes:layerItemSpan;
+    padding-top: 20px;
+    background-position: 11px 4px;
+}
+.layerCtrl_active{
+    composes:layerItemSpan;
+    padding-top: 20px;
+    background-position: 11px -45px;
+}
+.layerCtrl:hover{
+    opacity: 0.6
+}
+.bookmark{
+    composes:layerItemSpan;
+    background-position: 11px -336px;
+}
+.bookmark_active{
+    composes:layerItemSpan;
+    background-position: 11px -530px;
+}
+.bookmark:hover{
+    opacity: 0.6
+}
+.subway{
+    composes:layerItemSpan;
+    background-position: 11px -142px;
+}
+.subway:hover{
+    opacity: 0.6
+}
+/*tool_item*/
+.toolItemSpan {
+    float: left;
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    padding: 20px 10px 0;
+    border-right: 1px #e5e5e5 solid;
+    background: url(../../../static/img/tools_new.png) no-repeat;
+}
+.ranging{
+    composes:toolItemSpan;
+    background-position: 11px 2px;
+}
+.ranging:hover{
+    opacity: 0.6
+}
+.fullscreen{
+    composes:toolItemSpan;
+    border: 0;
+    background-position: 11px -255px;
+}
+.fullscreen:hover{
+    opacity: 0.6
 }  

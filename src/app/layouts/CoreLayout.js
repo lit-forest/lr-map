@@ -5,7 +5,6 @@ import Map from '../components/map/Map';
 import Search from '../components/search/Search';
 import Rbox from '../components/rbox/Rbox';
 import ToolBar from '../components/toolBar/ToolBar';
-import Bucket from '../components/bucket/Bucket';
 
 import styles from './an.css';
 
@@ -43,17 +42,17 @@ class CoreLayout extends Component {
                 <Search></Search>
                 <Rbox></Rbox>
                 <ToolBar></ToolBar>
-                <div className={styles.modular}>
-                    <ReactCSSTransitionGroup
-                        component="div"
-                        transitionName='animation'
-                        transitionEnterTimeout={500}
-                        transitionLeaveTimeout={300}>
-                        {React.cloneElement(children, {
-                            key: location.pathname
-                        })}
-                    </ReactCSSTransitionGroup>
-                </div>
+                <ReactCSSTransitionGroup
+                    id='bucket'
+                    component="div"
+                    className={styles.modular}
+                    transitionName='animation'
+                    transitionEnterTimeout={500}
+                    transitionLeaveTimeout={300}>
+                    {React.cloneElement(children, {
+                        key: location.pathname
+                    })}
+                </ReactCSSTransitionGroup>
             </div>
         )
     }
