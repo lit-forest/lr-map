@@ -1,5 +1,5 @@
 ## lr-map 
-为了解决目前在地图项目上面临的功能结构划分不够清晰，各模块功能代码杂糅在一起，地图展示不够简单易用而开发，整个项目的目的是为了建立基本的地图功能和逻辑结构划分，以方便以后的扩展和维护
+为了解决目前在地图项目上面临的功能结构划分不够清晰,各模块功能代码杂糅在一起,地图展示不够简单易用而开发,整个项目的目的是为了建立基本的地图功能和逻辑结构划分,以方便以后的扩展和维护.
 # 技术栈
 * [ECMAScript](https://github.com/lukehoban/es6features)
 * [react](https://github.com/facebook/react)
@@ -11,9 +11,11 @@
 * [express](https://github.com/expressjs/express)
 * [karma](https://github.com/karma-runner/karma)
 * [eslint](http://eslint.org)
+
 #开发环境配置
 * node `^4.5.0`
 * npm `^3.0.0`
+
 #start
 确认安装好开发环境配置，请开始以下步骤
 First copy the repo into your disk.
@@ -62,7 +64,7 @@ localhost:3232
 │── tests                        # 单元测试
 │── webpack-dev-conf             # 开发环境webpack配置
 │── webpack-pro-conf             # 部署环境webpack配置
-│── tests
+│── tests                        # 单元测试
 ```
 #样式
 项目采用css-modules方式，少量全局样式，每个组件的样式采用模块化的内敛样式
@@ -74,5 +76,5 @@ Babel被配置[babel-plugin-transform-runtime](https://www.npmjs.com/package/bab
 打包完成之后，直接复制dist文件夹到相应的web容器(nginx,tomcat等),打包结果也可以直接浏览器打开
 
 #Thanks
-觉得不错的话，请Star一下本项目，这是对作者最大的支持。
+觉得不错的话，请Star一下本项目，这是对作者最大的支持。     
 Thanks you guys all the time.
