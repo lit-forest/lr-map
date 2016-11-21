@@ -1,6 +1,7 @@
 ## lr-map 
-为了解决目前在地图项目上面临的功能结构划分不够清晰,各模块功能代码杂糅在一起,地图展示不够简单易用而开发,整个项目的目的是为了建立基本的地图功能和逻辑结构划分,以方便以后的扩展和维护.
-# 技术栈
+为了解决目前在地图项目上面临的功能结构划分不够清晰,各模块功能代码杂糅在一起,地图展示不够简单易用而开发,整个项目的目的是为了建立基本的地图功能和逻辑结构划分,以方便以后的扩展和维护,主要采用技术为React,React-Route,Leaflet等    
+
+## 技术栈
 * [ECMAScript](https://github.com/lukehoban/es6features)
 * [react](https://github.com/facebook/react)
 * [redux](https://github.com/rackt/redux)
@@ -10,13 +11,13 @@
 * [babel](https://github.com/babel/babel)
 * [express](https://github.com/expressjs/express)
 * [karma](https://github.com/karma-runner/karma)
-* [eslint](http://eslint.org)
+* [eslint](http://eslint.org)   
 
-#开发环境配置
+##开发环境配置
 * node `^4.5.0`
-* npm `^3.0.0`
+* npm `^3.0.0`     
 
-#start
+##start
 确认安装好开发环境配置，请开始以下步骤
 First copy the repo into your disk.
 ```bash
@@ -32,7 +33,7 @@ Third open the browser
 ```bash
 localhost:3232
 ```
-#程序目录
+##程序目录
 这个项目的结构使用的是 **fractal(不规则碎片形：适合大型项目)***，方法的分组主要是依照特性而不是文件类型。注意，这个目录结构只是一个指引，并不一定要按这个来。这种结构谐在让程序更容易扩展，想了解更多请[点击这里](https://github.com/justingreenberg)。
 ```
 .
@@ -66,15 +67,15 @@ localhost:3232
 │── webpack-pro-conf             # 部署环境webpack配置
 │── tests                        # 单元测试
 ```
-#样式
+##样式
 项目采用css-modules方式，少量全局样式，每个组件的样式采用模块化的内敛样式
 
-#打包
+##打包
 Babel被配置[babel-plugin-transform-runtime](https://www.npmjs.com/package/babel-plugin-transform-runtime)可以让代码更优化。另外，在生产环境，我们使用[react-optimize](https://github.com/thejameskyle/babel-react-optimize)来优化React代码。
 
-#部署
+##部署
 打包完成之后，直接复制dist文件夹到相应的web容器(nginx,tomcat等),打包结果也可以直接浏览器打开
 
-#Thanks
+##Thanks
 觉得不错的话，请Star一下本项目，这是对作者最大的支持。     
 Thanks you guys all the time.
