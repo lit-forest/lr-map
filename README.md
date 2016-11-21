@@ -99,7 +99,10 @@ localhost:3232
 Babel被配置[babel-plugin-transform-runtime](https://www.npmjs.com/package/babel-plugin-transform-runtime)可以让代码更优化.另外,在生产环境,我们使用[react-optimize](https://github.com/thejameskyle/babel-react-optimize)来优化React代码.    
 
 ##部署
-打包完成之后，直接复制dist文件夹到相应的web容器(nginx,tomcat等),打包结果也可以直接浏览器打开.    
+打包完成之后，直接复制dist文件夹到相应的web容器(nginx,tomcat等),打包结果也可以直接浏览器打开.      
+
+##License    
+MIT    
 
 ##Thanks
 觉得不错的话,请Star一下本项目,这是对作者最大的支持.              
