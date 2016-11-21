@@ -18,18 +18,18 @@
 * npm `^3.0.0`     
 
 ##start
-确认安装好开发环境配置，请开始以下步骤
-First copy the repo into your disk.
+确认安装好开发环境配置，请开始以下步骤     
+First 使用git或者直接下载压缩包到本地硬盘上
 ```bash
 $ git clone https://github.com/react-map/lr-map.git
 ```
-Second install node modules and start the webpack dev server
+Second 安装依赖开发包并启动webpack开发服务器
 ```bash
 $ npm install
 
 $ npm start
 ```
-Third open the browser
+Third 打开浏览器
 ```bash
 localhost:3232
 ```
