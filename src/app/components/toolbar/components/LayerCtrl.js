@@ -49,9 +49,7 @@ const styles = {
 class LayerCtrl extends Component {
     /**
      * Creates an instance of LayerCtrl.
-     * @param {any} props
-     * 
-     * 
+     * @param {Object} props
      * @memberOf LayerCtrl
      */
     constructor(props) {
@@ -85,21 +83,19 @@ class LayerCtrl extends Component {
      */
     createItemsArr(baseLayer) {
         let layerArr = [];
-        baseLayer.map((layer) => {
-            layerArr.push(
-                <ListItem
-                    ref={layer.id}
-                    key={layer.url}
-                    primaryText={layer.name}
-                    leftAvatar={<Avatar src={layer.img} size={30} style={styles.avatar} />}
-                    rightToggle={<Toggle defaultToggled={layer.show} onClick={() => this.handleToggle(layer.id)} />}
-                    style={styles.listItem}
-                    />
-            )
+        layerArr = baseLayer.map((layer) => {
+            return <ListItem
+                key={layer.url}
+                primaryText={layer.name}
+                leftAvatar={<Avatar src={layer.img} size={30} style={styles.avatar} />}
+                rightToggle={<Toggle defaultToggled={layer.show} onClick={() => this.handleToggle(layer.id)} />}
+                style={styles.listItem}
+                />
         })
+        console.log(layerArr)
         return layerArr;
     }
-    
+
     render() {
         return (
             <div style={styles.panel}>
