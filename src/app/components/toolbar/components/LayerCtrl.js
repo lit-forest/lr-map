@@ -30,8 +30,8 @@ const styles = {
         fontSize: '13px'
     },
     listItem: {
-        marginTop: -7,
-        marginBottom: -8,
+        marginTop: -15,
+        marginBottom: -15,
         fontFamily: "'Microsoft Yahei','Helvetica Neue',Helvetica,Arial,sans-serif",
         fontSize: '10px',
     },
@@ -54,26 +54,6 @@ class LayerCtrl extends Component {
      */
     constructor(props) {
         super(props);
-        this.state = {
-            open: false
-        }
-    }
-    /**
-     * @doc 基础图层和设备图层的点击事件(控制两个只能打开一个)
-     * @memberOf LayerCtrl
-     */
-    containerListItemClick() {
-        this.setState({
-            open: !this.state.open
-        });
-    }
-    /**
-     * @param {any} layer
-     * @doc 图层显示隐藏控制
-     * @memberOf LayerCtrl
-     */
-    handleToggle(layer) {
-        console.log(layer);
     }
     /**
      * @param {array} baseLayer
@@ -104,21 +84,17 @@ class LayerCtrl extends Component {
                         primaryText="基础图层"
                         leftIcon={<ContentInbox />}
                         initiallyOpen={false}
-                        open={this.state.open}
                         primaryTogglesNestedList={true}
                         style={styles.listRoot}
                         nestedItems={this.createItemsArr(_layer_global.baseLayer)}
-                        onKeyboardFocus={this.handleNestedListToggle}
-                        onClick={() => this.containerListItemClick()}
                         />
                     <ListItem
                         primaryText="设备图层"
                         leftIcon={<ContentInbox />}
-                        open={!this.state.open}
+                        initiallyOpen={true}
                         primaryTogglesNestedList={true}
                         style={styles.listRoot}
                         nestedItems={this.createItemsArr(_layer_global.deviceLayer)}
-                        onClick={() => this.containerListItemClick()}
                         />
                 </MobileTearSheet>
             </div>

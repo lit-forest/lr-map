@@ -25,7 +25,7 @@ class Bookmark extends Component {
     render() {
         return (
             <div style={styles.panel}>
-                <h1>Bookmark</h1>
+                hello
             </div>
         );
     }

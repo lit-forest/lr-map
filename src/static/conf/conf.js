@@ -14,20 +14,6 @@ var _layer_global = {
             url: '2',
             show: false,
             img: 'img/ok-128.jpg'
-        },
-        {
-            id:'streetLayer_2015',
-            name: '2015年街道图',
-            url: '3',
-            show: false,
-            img: 'img/ok-128.jpg'
-        }, 
-        {
-            id:'imageLayer_2015',
-            name: '2015影像图',
-            url: '4',
-            show: false,
-            img: 'img/ok-128.jpg'
         }
     ],
     deviceLayer: [
