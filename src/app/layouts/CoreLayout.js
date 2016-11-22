@@ -5,23 +5,7 @@ import Map from '../components/map/Map';
 import Search from '../components/search/Search';
 import Rbox from '../components/rbox/Rbox';
 import ToolBar from '../components/toolBar/ToolBar';
-
-
-const styles = {
-    root: {
-        zIndex: 2000,
-        position: 'absolute',
-        right: '0px',
-        bottom: '130px',
-        height: '560px',
-        width: '330px',
-        opacity: 1,
-        boxShadow: '-2px 2px 6px rgba(0,0,0,.3)',
-        userSelect: 'none',
-        backgroundColor: 'white',
-        //display: 'none'
-    }
-}
+import Bucket from '../components/bucket/Bucket';
 
 /**
  * @author sylvenas
@@ -57,17 +41,19 @@ class CoreLayout extends Component {
                 <Search></Search>
                 <Rbox></Rbox>
                 <ToolBar></ToolBar>
-                <ReactCSSTransitionGroup
-                    id='bucket'
-                    component="div"
-                    style={styles.root}
-                    transitionName='animation'
-                    transitionEnterTimeout={500}
-                    transitionLeaveTimeout={300}>
-                    {React.cloneElement(children, {
-                        key: location.pathname
-                    })}
-                </ReactCSSTransitionGroup>
+                <Bucket child={
+                    <ReactCSSTransitionGroup
+                        id='bucket'
+                        component="div"
+                        transitionName='animation'
+                        transitionEnterTimeout={500}
+                        transitionLeaveTimeout={300}>
+                        {React.cloneElement(children, {
+                            key: location.pathname
+                        })}
+                    </ReactCSSTransitionGroup>}>
+                </Bucket>
+
             </div>
         )
     }

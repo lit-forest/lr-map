@@ -103,3 +103,16 @@ ol, ul {
 .fullscreen:hover{
     opacity: 0.6
 }
+.more{
+    composes:layerItemSpan;
+    border: 0;
+    background-position: 11px -336px;
+}
+.more_active{
+    composes:layerItemSpan;
+    border: 0;
+    background-position: 11px -530px;
+}
+.more:hover{
+    opacity: 0.6
+}
