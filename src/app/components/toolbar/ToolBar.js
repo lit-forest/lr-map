@@ -6,73 +6,77 @@ import Query from './components/Query';
 import Tool from './components/Tool';
 import FullScreen from './components/FullScreen';
 
+/**
+ * @author sylvenas
+ * @doc ToolBar 容器
+ * @class ToolBar
+ * @extends {Component}
+ */
 class ToolBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
             item: null,
-            key: null,
-            enum: {
-                layerCtrl: false,
-                bookmark: false,
-                query: false,
-                tool: false,
-                fullScreen: false
-            }
+            key: null
         }
     }
-    liClick(liId) {
+    /**
+     * @doc 每一个单元格点击事件
+     * @doc 判断点击的哪一个单元格，以及是否展示
+     * @param {string} liId
+     * 
+     * @memberOf ToolBar
+     */
+    itemClick(liId) {
         switch (liId) {
             case 'layerCtrl':
-                if (this.state.key == liId)
+                this.state.key == liId ?
                     this.setState({
                         item: null,
-                        key: null,
-                        enum: {
-                            layerCtrl: false,
-                            bookmark: false,
-                            query: false,
-                            tool: false,
-                            fullScreen: false
-                        }
-                    });
-                else
-                    this.setState({
+                        key: null
+                    }) : this.setState({
                         item: <LayerCtrl />,
-                        key: liId,
-                        enum: {
-                            layerCtrl: true,
-                            bookmark: false,
-                            query: false,
-                            tool: false,
-                            fullScreen: false
-                        }
+                        key: liId
                     });
                 break;
             case 'bookmark':
-                if (this.state.key == liId)
+                this.state.key == liId ?
                     this.setState({
                         item: null,
-                        key: null,
-                        enum: {
-                            layerCtrl: false,
-                            bookmark: false,
-                            query: false,
-                            tool: false,
-                            fullScreen: false
-                        }
-                    });
-                else
-                    this.setState({
+                        key: null
+                    }) : this.setState({
                         item: <Bookmark />,
-                        key: liId,
-                        enum: {
-                            layerCtrl: false,
-                            bookmark: true,
-                            query: false,
-                            tool: false,
-                            fullScreen: false
-                        }
+                        key: liId
+                    });
+                break;
+            case 'query':
+                this.state.key == liId ?
+                    this.setState({
+                        item: null,
+                        key: null
+                    }) : this.setState({
+                        item: <Query />,
+                        key: liId
+                    });
+                break;
+            case 'tool':
+                this.state.key == liId ?
+                    this.setState({
+                        item: null,
+                        key: null
+                    }) : this.setState({
+                        item: <Tool />,
+                        key: liId
+                    });
+                break;
+            case 'fullScreen':
+                this.state.key == liId ?
+                    this.setState({
+                        item: null,
+                        key: null
+                    }) : this.setState({
+                        item: null,
+                        key: liId
                     });
                 break;
             default:
@@ -81,26 +85,24 @@ class ToolBar extends Component {
     }
     render() {
         return (
-            <div id='toolBar' className={styles.layerbox}>
-                <div id="layerbox" className={styles.layerboxIn}>
-                    <ul>
-                        <li id='layerCtrl' ref='layerCtrl' onClick={() => this.liClick(this.refs.layerCtrl.id)}>
-                            <span className={this.state.enum.layerCtrl ? styles.layerCtrl_active : styles.layerCtrl}>图层</span>
-                        </li>
-                        <li id='bookmark' ref="bookmark" onClick={() => this.liClick(this.refs.bookmark.id)}>
-                            <span className={this.state.enum.bookmark ? styles.bookmark_active : styles.bookmark}>书签</span>
-                        </li>
-                        <li id='query' ref="query" onClick={() => this.liClick(this.refs.query.id)}>
-                            <span className={styles.subway}>查询</span>
-                        </li>
-                        <li id='tool' ref="tool" onClick={() => this.liClick(this.refs.tool.id)}>
-                            <span className={styles.ranging}>测量</span>
-                        </li>
-                        <li id='fullScreen' ref="fullScreen" onClick={() => this.liClick(this.refs.fullScreen.id)}>
-                            <span className={styles.fullscreen}>全屏</span>
-                        </li>
-                    </ul>
-                </div>
+            <div className={styles.layerbox}>
+                <ul>
+                    <li id='layerCtrl' ref='layerCtrl' onClick={() => this.itemClick(this.refs.layerCtrl.id)}>
+                        <span className={this.state.key === 'layerCtrl' ? styles.layerCtrl_active : styles.layerCtrl}>图层</span>
+                    </li>
+                    <li id='bookmark' ref="bookmark" onClick={() => this.itemClick(this.refs.bookmark.id)}>
+                        <span className={this.state.key === 'bookmark' ? styles.bookmark_active : styles.bookmark}>书签</span>
+                    </li>
+                    <li id='query' ref="query" onClick={() => this.itemClick(this.refs.query.id)}>
+                        <span className={this.state.key === 'query' ? styles.query_active : styles.query}>查询</span>
+                    </li>
+                    <li id='tool' ref="tool" onClick={() => this.itemClick(this.refs.tool.id)}>
+                        <span className={this.state.key === 'tool' ? styles.tool_active : styles.tool}>测量</span>
+                    </li>
+                    <li id='fullScreen' ref="fullScreen" onClick={() => this.itemClick(this.refs.fullScreen.id)}>
+                        <span className={styles.fullscreen}>全屏</span>
+                    </li>
+                </ul>
                 {this.state.item}
             </div>
         );

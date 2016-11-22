@@ -13,12 +13,8 @@
     border-radius: 2px;
     padding: 5px 6px;
     cursor: move;
-}
-.layerboxIn {
-    background: #fff;
     height: 36px;
     width: 225px;
-    position: relative;
     font-family: 'Microsoft Yahei','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size: 12px;
 }
@@ -67,11 +63,15 @@ ol, ul {
 .bookmark:hover{
     opacity: 0.6
 }
-.subway{
+.query{
     composes:layerItemSpan;
     background-position: 11px -142px;
 }
-.subway:hover{
+.query_active{
+    composes:layerItemSpan;
+    background-position: 11px -190px;
+}
+.query:hover{
     opacity: 0.6
 }
 /*tool_item*/
@@ -84,11 +84,15 @@ ol, ul {
     border-right: 1px #e5e5e5 solid;
     background: url(../../../static/img/tools_new.png) no-repeat;
 }
-.ranging{
+.tool{
     composes:toolItemSpan;
     background-position: 11px 2px;
 }
-.ranging:hover{
+.tool_active{
+    composes:toolItemSpan;
+    background-position: 10px -62px;
+}
+.tool:hover{
     opacity: 0.6
 }
 .fullscreen{
@@ -98,4 +102,4 @@ ol, ul {
 }
 .fullscreen:hover{
     opacity: 0.6
-}  
+}
