@@ -95,7 +95,10 @@ localhost:3232
 ##样式
 项目采用css-modules方式，少量全局样式，每个组件的样式采用模块化的内敛样式.       
 
-##打包
+##打包    
+```bash
+npm run build
+```
 Babel被配置[babel-plugin-transform-runtime](https://www.npmjs.com/package/babel-plugin-transform-runtime)可以让代码更优化.另外,在生产环境,我们使用[react-optimize](https://github.com/thejameskyle/babel-react-optimize)来优化React代码.    
 
 ##部署
