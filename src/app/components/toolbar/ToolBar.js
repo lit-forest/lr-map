@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 import styles from './toolBar.css';
 import LayerCtrl from './components/LayerCtrl';
 import Bookmark from './components/Bookmark';
@@ -13,11 +15,18 @@ import FullScreen from './components/FullScreen';
  * @extends {Component}
  */
 class ToolBar extends Component {
+    /**
+     * Creates an instance of ToolBar.
+     * state item->为每个功能下对应的具体功能，key-> 为选择的某一个容器的指代
+     * @param {any} props
+     * 
+     * @memberOf ToolBar
+     */
     constructor(props) {
         super(props);
         this.state = {
-            item: null,
-            key: null
+            item: <div/>,
+            key: 6
         }
     }
     /**
@@ -33,7 +42,7 @@ class ToolBar extends Component {
                 this.state.key == liId ?
                     this.setState({
                         item: null,
-                        key: null
+                        key: 0
                     }) : this.setState({
                         item: <LayerCtrl />,
                         key: liId
@@ -43,7 +52,7 @@ class ToolBar extends Component {
                 this.state.key == liId ?
                     this.setState({
                         item: null,
-                        key: null
+                        key: 1
                     }) : this.setState({
                         item: <Bookmark />,
                         key: liId
@@ -53,7 +62,7 @@ class ToolBar extends Component {
                 this.state.key == liId ?
                     this.setState({
                         item: null,
-                        key: null
+                        key: 2
                     }) : this.setState({
                         item: <Query />,
                         key: liId
@@ -63,7 +72,7 @@ class ToolBar extends Component {
                 this.state.key == liId ?
                     this.setState({
                         item: null,
-                        key: null
+                        key: 3
                     }) : this.setState({
                         item: <Tool />,
                         key: liId
@@ -73,7 +82,7 @@ class ToolBar extends Component {
                 this.state.key == liId ?
                     this.setState({
                         item: null,
-                        key: null
+                        key: 4
                     }) : this.setState({
                         item: null,
                         key: liId
@@ -103,7 +112,16 @@ class ToolBar extends Component {
                         <span className={styles.fullscreen}>全屏</span>
                     </li>
                 </ul>
-                {this.state.item}
+                <ReactCSSTransitionGroup
+                    id='bucket'
+                    component="div"
+                    transitionName='animation'
+                    transitionEnterTimeout={500}
+                    transitionLeaveTimeout={300}>
+                    {React.cloneElement(this.state.item, {
+                        key: this.state.key
+                    })}
+                </ReactCSSTransitionGroup>
             </div>
         );
     }
