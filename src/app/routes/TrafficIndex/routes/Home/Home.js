@@ -14,16 +14,28 @@ import Nav from '../../../../components/Nav/Nav';
 
 import styles from './home.css';
 
+const style = {
+    root: {
+        position: 'absolute',
+        width: '100%'
+    },
+    listItem: {
+        fontFamily: "'Microsoft Yahei',sans-serif",
+        fontSize: '13px'
+    }
+}
+
 class Home extends Component {
     render() {
         return (
-            <div className={styles.root}>
+            <div style={style.root}>
                 <Nav parentUrl={'/'} parentName={'首页'} nowName={'交通指数'}></Nav>
                 <MobileTearSheet>
                     <List>
                         <Subheader>交通规律专题</Subheader>
                         <Link to={'/trafficIndex/holiday'}>
                             <ListItem
+                                style={style.listItem}
                                 primaryText="节假日专题"
                                 leftAvatar={<Avatar src="img/ok-128.jpg" />}
                                 rightIcon={<ArrowRight />}
@@ -31,22 +43,26 @@ class Home extends Component {
                         </Link>
                         <Link to={'/trafficIndex/od'}>
                             <ListItem
+                                style={style.listItem}
                                 primaryText="OD分析"
                                 leftAvatar={<Avatar src="img/kolage-128.jpg" />}
                                 rightIcon={<ArrowRight />}
                                 />
                         </Link>
                         <ListItem
+                            style={style.listItem}
                             primaryText="预测回放"
                             leftAvatar={<Avatar src="img/uxceo-128.jpg" />}
                             rightIcon={<ArrowRight />}
                             />
                         <ListItem
+                            style={style.listItem}
                             primaryText="指数更新"
                             leftAvatar={<Avatar src="img/kerem-128.jpg" />}
                             rightIcon={<ArrowRight />}
                             />
                         <ListItem
+                            style={style.listItem}
                             primaryText="交通事故"
                             leftAvatar={<Avatar src="img/raquelromanp-128.jpg" />}
                             rightIcon={<ArrowRight />}
@@ -56,11 +72,13 @@ class Home extends Component {
                     <List>
                         <Subheader>系统配置</Subheader>
                         <ListItem
+                            style={style.listItem}
                             primaryText="区域配置"
                             leftAvatar={<Avatar src="img/chexee-128.jpg" />}
                             rightIcon={<ArrowRight />}
                             />
                         <ListItem
+                            style={style.listItem}
                             primaryText="OD配置"
                             leftAvatar={<Avatar src="img/jsa-128.jpg" />}
                             rightIcon={<ArrowRight />}

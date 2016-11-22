@@ -1,12 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-import styles from './toolBar.css';
 import LayerCtrl from './components/LayerCtrl';
 import Bookmark from './components/Bookmark';
 import Query from './components/Query';
 import Tool from './components/Tool';
 import FullScreen from './components/FullScreen';
+
+import styles from './toolBar.css';
 
 /**
  * @author sylvenas
@@ -25,7 +26,7 @@ class ToolBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            item: <div/>,
+            item: <div />,
             key: 6
         }
     }
@@ -41,7 +42,7 @@ class ToolBar extends Component {
             case 'layerCtrl':
                 this.state.key == liId ?
                     this.setState({
-                        item: null,
+                        item: <div />,
                         key: 0
                     }) : this.setState({
                         item: <LayerCtrl />,
@@ -51,7 +52,7 @@ class ToolBar extends Component {
             case 'bookmark':
                 this.state.key == liId ?
                     this.setState({
-                        item: null,
+                        item: <div />,
                         key: 1
                     }) : this.setState({
                         item: <Bookmark />,
@@ -61,7 +62,7 @@ class ToolBar extends Component {
             case 'query':
                 this.state.key == liId ?
                     this.setState({
-                        item: null,
+                        item: <div />,
                         key: 2
                     }) : this.setState({
                         item: <Query />,
@@ -71,7 +72,7 @@ class ToolBar extends Component {
             case 'tool':
                 this.state.key == liId ?
                     this.setState({
-                        item: null,
+                        item: <div />,
                         key: 3
                     }) : this.setState({
                         item: <Tool />,
@@ -81,10 +82,10 @@ class ToolBar extends Component {
             case 'fullScreen':
                 this.state.key == liId ?
                     this.setState({
-                        item: null,
+                        item: <div />,
                         key: 4
                     }) : this.setState({
-                        item: null,
+                        item: <div />,
                         key: liId
                     });
                 break;
@@ -92,6 +93,7 @@ class ToolBar extends Component {
                 break;
         }
     }
+    
     render() {
         return (
             <div className={styles.layerbox}>

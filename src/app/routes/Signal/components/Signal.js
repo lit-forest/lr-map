@@ -6,7 +6,13 @@ import IconButton from 'material-ui/IconButton';
 import NavigationClose from 'material-ui/svg-icons/hardware/keyboard-arrow-left';
 
 import Nav from '../../../components/Nav/Nav';
-import styles from './signal.css';
+
+const style = {
+    root: {
+        position: 'absolute',
+        width: '100%'
+    }
+}
 
 class Signal extends Component {
 
@@ -16,8 +22,8 @@ class Signal extends Component {
 
     render() {
         return (
-            <div>
-                <Nav parentUrl={'/'} parentName={'首页'} nowName={'hello'}></Nav>
+            <div style={style.root}>
+                <Nav parentUrl={'/'} parentName={'首页'} nowName={'信号控制'}></Nav>
                 <h1>Signal</h1>
             </div>
         );

@@ -6,7 +6,22 @@ import Search from '../components/search/Search';
 import Rbox from '../components/rbox/Rbox';
 import ToolBar from '../components/toolBar/ToolBar';
 
-import styles from './an.css';
+
+const styles = {
+    root: {
+        zIndex: 2000,
+        position: 'absolute',
+        right: '0px',
+        bottom: '130px',
+        height: '560px',
+        width: '330px',
+        opacity: 1,
+        boxShadow: '-2px 2px 6px rgba(0,0,0,.3)',
+        userSelect: 'none',
+        backgroundColor: 'white',
+        //display: 'none'
+    }
+}
 
 /**
  * @author sylvenas
@@ -45,7 +60,7 @@ class CoreLayout extends Component {
                 <ReactCSSTransitionGroup
                     id='bucket'
                     component="div"
-                    className={styles.modular}
+                    style={styles.root}
                     transitionName='animation'
                     transitionEnterTimeout={500}
                     transitionLeaveTimeout={300}>

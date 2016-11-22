@@ -13,7 +13,7 @@ class Nav extends Component {
     render() {
         const {parentUrl, parentName, nowName} = this.props;
         return (
-            <div>
+            <div className={styles.root}>
                 <Subheader>
                     <Link to={parentUrl} className={styles.activeStyle} >
                         <IconButton className={styles.arrow_left}><ArrowLeft color={'#252B33'} /></IconButton>

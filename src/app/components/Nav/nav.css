@@ -1,3 +1,6 @@
+.root{
+    -webkit-user-select:none;
+}
 .back{
     position: absolute;
     top: -2px;

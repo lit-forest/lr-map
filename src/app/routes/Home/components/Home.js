@@ -14,7 +14,7 @@ const styles = {
         flexWrap: 'wrap',
         justifyContent: 'space-around',
         position: 'absolute',
-        width:'100%'
+        width: '100%'
     },
     gridList: {
         width: 300,
@@ -22,7 +22,7 @@ const styles = {
         overflowY: 'auto',
         cursor: 'pointer'
     },
-    activeStyle:{
+    home: {
         color: '#44bbd0'
     }
 };
@@ -79,7 +79,7 @@ class Home extends Component {
                     style={styles.gridList}
                     >
                     <Subheader>
-                        <Link to={'/'} activeStyle={styles.activeStyle}><div>首页</div></Link>
+                        <div style={styles.home}>首页</div>
                     </Subheader>
                     {tilesData.map((tile) => (
                         <Link to={tile.route} key={tile.route}>
