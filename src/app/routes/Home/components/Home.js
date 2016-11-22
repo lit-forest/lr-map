@@ -29,7 +29,7 @@ const styles = {
 
 const tilesData = [
     {
-        img: 'img/01.jpg',
+        img: 'img/08.jpg',
         title: '信号监控',
         route: '/signal',
     },

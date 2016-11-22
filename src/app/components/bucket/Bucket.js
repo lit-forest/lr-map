@@ -3,6 +3,8 @@ import React, { Component, PropTypes } from 'react';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 
+import styles from './bucket.css';
+
 const style = {
     root: {
         zIndex: 2000,
@@ -16,10 +18,10 @@ const style = {
         userSelect: 'none',
         backgroundColor: 'white',
     },
-    pos:{
-        position:'absolute',
-        top:250,
-        left:-20
+    pos: {
+        position: 'absolute',
+        top: 250,
+        left: -20
     },
     show: {
         marginRight: 20,
@@ -29,17 +31,22 @@ const style = {
 class Bucket extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            show: false
+        }
     }
-
+    toggle() {
+        this.setState({
+            show: !this.state.show
+        })
+    }
     render() {
         const {child} = this.props;
         return (
-            <div style={style.root}>
+            <div className={this.state.show ? styles.root : styles.root_none}>
                 {child}
-                <div style={style.pos}>
-                    <FloatingActionButton backgroundColor={'#EBE3D8'} mini={true} style={style.show}>
-                        <ContentAdd />
-                    </FloatingActionButton>
+                <div className={styles.panCtrl} onClick={() => this.toggle()}>
+                    <i className={styles.fa + ' ' + styles.faChevronR}></i>
                 </div>
             </div>
         );

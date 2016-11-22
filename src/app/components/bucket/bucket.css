@@ -1,0 +1,46 @@
+.bucket{
+    z-index: 2000;
+    position: absolute;
+    right: 0px;
+    bottom: 130px;
+    height: 560px;
+    opacity: 1;
+    box-shadow: -2px 2px 6px rgba(0,0,0,.3);
+    background-color: white;
+    transition:width 0.3s;
+}
+.root{
+    composes:bucket;
+    width: 330px;
+}
+.root_none{
+    composes:bucket;
+    width: 0px;
+}
+.panCtrl {
+    position: absolute;
+    cursor: pointer;
+    overflow: hidden;
+    text-align: center;
+    background: url(../../../static/img/panctrl.png) center center no-repeat;
+    left: -83px;
+    top: 250px;
+    width: 150px;
+    height: 24px;
+    -webkit-transform:rotate(90deg); 
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    transform: translate(0,0);
+    padding: -1px 0px;
+    opacity: 1;
+}
+.faChevronL:before {
+    content: "\f077";
+}
+.faChevronR:before {
+    content: "\f078";
+}
