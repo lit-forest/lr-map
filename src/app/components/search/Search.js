@@ -2,7 +2,20 @@ import React, { Component, PropTypes } from 'react';
 import styles from './search.css';
 import logoSrc from '../../../static/img/logo.png';
 
+/**
+ * @author sylvenas
+ * @doc 搜索栏
+ * @class Search
+ * @extends {Component}
+ */
 class Search extends Component {
+    /**
+     * 
+     * 
+     * @returns
+     * 
+     * @memberOf Search
+     */
     render() {
         return (
             <section id="search" className={styles.search}>

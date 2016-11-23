@@ -1,13 +1,25 @@
 import React, { Component, PropTypes } from 'react';
 
+/**
+ * @author sylvenas
+ * @doc 类移动端容器样式
+ * @class MobileTearSheet
+ * @extends {Component}
+ */
 class MobileTearSheet extends Component {
 
     static contextTypes = {
         muiTheme: PropTypes.object.isRequired,
     };
+    
+    /**
+     * @children 调用方传入的子组件
+     * @returns 整个tear Sheet
+     * @memberOf MobileTearSheet
+     */
     render() {
         const {prepareStyles} = this.context.muiTheme;
-
+        const {children} = this.props;
         const styles = {
             root: {
                 marginBottom: 24,
@@ -30,7 +42,7 @@ class MobileTearSheet extends Component {
         return (
             <div style={prepareStyles(styles.root)}>
                 <div style={prepareStyles(styles.container)}>
-                    {this.props.children}
+                    {children}
                 </div>
             </div>
         );

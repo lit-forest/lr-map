@@ -17,12 +17,7 @@ class CoreLayout extends Component {
     constructor(props) {
         super(props);
     }
-    componentWillReceiveProps(nextProps) {
-
-    }
-
     /**
-     * @author sylvenas
      * @doc 阻止link导致的浏览器地址变化而引起的二次渲染
      * @param {object} nextProps
      * @param {object} nextState
@@ -32,7 +27,14 @@ class CoreLayout extends Component {
     shouldComponentUpdate(nextProps, nextState) {
         return (this.props.router.location.action === 'PUSH')
     }
-
+    
+    /**
+     * @doc 添加根节点组件
+     * @children->子路由所指向的右侧模块组件(必须)
+     * @location->子路由的路由地址(必须)
+     * @returns 全部的根组件集合
+     * @memberOf CoreLayout
+     */
     render() {
         const {children, location} = this.props;
         return (
@@ -41,7 +43,7 @@ class CoreLayout extends Component {
                 <Search></Search>
                 <Rbox></Rbox>
                 <ToolBar></ToolBar>
-                <Bucket child={
+                <Bucket>
                     <ReactCSSTransitionGroup
                         id='bucket'
                         component="div"
@@ -51,7 +53,7 @@ class CoreLayout extends Component {
                         {React.cloneElement(children, {
                             key: location.pathname
                         })}
-                    </ReactCSSTransitionGroup>}>
+                    </ReactCSSTransitionGroup>
                 </Bucket>
 
             </div>

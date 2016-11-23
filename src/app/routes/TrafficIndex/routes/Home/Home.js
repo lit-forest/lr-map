@@ -25,7 +25,17 @@ const style = {
     }
 }
 
+/**
+ * @author sylvenas
+ * @doc 指数模块的主页面
+ * @class Home
+ * @extends {Component}
+ */
 class Home extends Component {
+    /**
+     * @returns  指数主页面
+     * @memberOf Home
+     */
     render() {
         return (
             <div style={style.root}>

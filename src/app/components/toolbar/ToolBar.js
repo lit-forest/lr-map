@@ -19,8 +19,7 @@ class ToolBar extends Component {
     /**
      * Creates an instance of ToolBar.
      * state item->为每个功能下对应的具体功能，key-> 为选择的某一个容器的指代
-     * @param {any} props
-     * 
+     * @param {Object} props
      * @memberOf ToolBar
      */
     constructor(props) {
@@ -33,8 +32,7 @@ class ToolBar extends Component {
     /**
      * @doc 每一个单元格点击事件
      * @doc 判断点击的哪一个单元格，以及是否展示
-     * @param {string} liId
-     * 
+     * @param {string} liId 点击的单元格的ID
      * @memberOf ToolBar
      */
     itemClick(liId) {

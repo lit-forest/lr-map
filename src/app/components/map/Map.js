@@ -1,13 +1,28 @@
 import React from 'react';
 import L from 'leaflet';
 
+/**
+ * @author sylvenas
+ * @doc 初始化地图组件
+ * @class Map
+ * @extends {React.Component}
+ */
 class Map extends React.Component {
     
+    /**
+     * @doc 地图容器DOM
+     * @returns 地图容器
+     * @memberOf Map
+     */
     render() {
         return (
             <div id='map'></div>
         )
     }
+    /**
+     * @doc 初始化地图,使lrmap对象成为全局对象，在整个项目中的任意地方直接使用
+     * @memberOf Map
+     */
     componentDidMount() {
         let lrmap = L.map("map", {
             center: [28.41, 121.355],

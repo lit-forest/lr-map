@@ -16,6 +16,7 @@
 .root_none{
     composes:bucket;
     width: 0px;
+    right: -2px;
 }
 .panCtrl {
     position: absolute;

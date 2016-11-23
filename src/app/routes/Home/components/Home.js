@@ -70,7 +70,17 @@ const tilesData = [
     },
 ];
 
+/**
+ * @author sylvenas
+ * @doc 右侧功能模块主页面，展示全部的功能模块概览
+ * @class Home
+ * @extends {Component}
+ */
 class Home extends Component {
+    /**
+     * @returns 右侧收缩面板主页面
+     * @memberOf Home
+     */
     render() {
         return (
             <div style={styles.root}>
