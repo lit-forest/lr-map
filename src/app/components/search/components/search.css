@@ -1,0 +1,114 @@
+.search {
+    position: absolute;
+    z-index: 6201;
+    left: 15px;
+    top: 15px;
+    font-family: 'Microsoft Yahei','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    -webkit-user-select: none;
+}
+.dtrigger {
+    position: absolute;
+}
+.searchbox {
+    position: relative;
+    z-index: 2201;
+    width: 345px;
+    height: 45px;
+    background: #fff;
+    box-shadow: 1px 2px 1px rgba(0,0,0,.1);
+}
+.searchbox .searchipt {
+    position: absolute;
+    top: 15px;
+    left: 50px;
+    text-indent: 8px;
+    z-index: 2200;
+    border: none;
+    width: 226px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0;
+    letter-spacing: .5px;
+}
+.searchbox .iptbox {
+    left: 50px;
+    width: 345px;
+    z-index: 2202;
+    border-radius: 2px;
+}
+.logo {
+	left: 8px;
+    top: 6px;
+    height: 34px;
+    position: absolute;
+}
+.searchbox .separator {
+    position: absolute;
+    right: 38px;
+    top: 11px;
+    height: 24px;
+    width: 1px;
+    background: #ccc;
+}
+.searchbox .direntry {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 8px;
+    top: 12px;
+    text-align: center;
+    cursor: pointer;
+}
+input{
+	color: inherit;
+    font: inherit;
+    margin: 0;
+    outline: 0;
+}
+.searchbox .direntry .fa-dir {
+    display: inline-block;
+    width: 11px;
+    height: 16px;
+}
+img {
+    vertical-align: middle;
+}
+img, legend {
+    border: 0;
+}
+.searchbox .iptbox #searchbtn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 9308;
+    width: 32px;
+    height: 32px;
+}
+.searchbox .searchlogo {
+    position: relative;
+    top: 4px;
+    left: 1px;
+    font-size: 16px;
+    color: #ccc;
+}
+.searchlogo:hover{
+	color: #00A0E9;
+}
+.fa {
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    transform: translate(0,0);
+    -moz-osx-font-smoothing: grayscale;
+}
+.fa, .fa-stack {
+    display: inline-block;
+}
+.fa, .jBox-wrapper {
+    -moz-osx-font-smoothing: grayscale;
+}
+.fa_search:before {
+    content: "\f002";
+}

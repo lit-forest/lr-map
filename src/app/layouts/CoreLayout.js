@@ -2,8 +2,8 @@ import React, { Component, PropTypes } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import Map from '../components/map/Map';
-import Search from '../components/search/Search';
-import Rbox from '../components/rbox/Rbox';
+import Search from '../components/search';
+import Rbox from '../components/rbox';
 import ToolBar from '../components/toolBar/ToolBar';
 import Bucket from '../components/bucket/Bucket';
 

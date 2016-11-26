@@ -1,4 +1,4 @@
-import CoreLayout from '../layouts/CoreLayout';
+import CoreLayout from '../layouts';
 import Home from './Home'
 import TrafficIndex from './TrafficIndex';
 import Signal from './Signal';
@@ -13,7 +13,7 @@ const createRoutes = (store) => (
     {
         childRoutes: [{
             path: '/',
-            component: CoreLayout,
+            component: CoreLayout(store),
             indexRoute: Home,
             childRoutes: [
                 CounterRoute(store),
