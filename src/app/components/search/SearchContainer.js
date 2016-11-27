@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import Search from './components/Search'
-import {search} from './action'
+import {search_ASYN} from './action'
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         onSearchClick: (searchKey) =>{
-            dispatch(search(searchKey))
+            dispatch(search_ASYN(searchKey))
         }
     }
 }

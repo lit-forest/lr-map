@@ -3,7 +3,7 @@ import Rbox from './components/Rbox'
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        child: state
+        child: state.rbox
     }
 }
 

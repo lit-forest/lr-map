@@ -29,14 +29,7 @@ class MobileTearSheet extends Component {
             },
             container: {
                 height: this.props.height,
-                overflow: 'hidden',
-            },
-            bottomTear: {
-                display: 'block',
-                position: 'relative',
-                marginTop: -10,
-                maxWidth: 360,
-            },
+            }
         };
 
         return (

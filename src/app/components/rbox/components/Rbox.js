@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import SearchResults from './SearchResults';
 import styles from './rbox.css';
 
 /**
@@ -38,10 +39,10 @@ class Rbox extends Component {
      * @memberOf Rbox
      */
     render() {
-        console.log('rbox', this.props.child);
+        const {child} = this.props;
         return (
             <div id="rbox" className={this.state.show ? styles.rboxShow : styles.rboxNone}>
-                
+                <SearchResults data={child} />
                 <div className={styles.panCtrl} onClick={() => this.toggle()}>
                     <i className={styles.fa + ' ' + (this.state.show ? styles.faChevronUp : styles.faChevronDown)} id="contractionInsideBtnUp"></i>
                 </div>
@@ -51,7 +52,7 @@ class Rbox extends Component {
 }
 
 Rbox.propTypes = {
-    
+
 };
 
 export default Rbox;
