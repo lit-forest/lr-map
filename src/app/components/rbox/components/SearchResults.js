@@ -22,8 +22,12 @@ const styles = {
         width: '90%'
     },
     primaryText: {
+        marginTop: -3,
         fontSize: '14px',
-        color: '#565656'
+        color: '#565656',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap',
     },
     secondaryText: {
         color: '#999',
@@ -38,7 +42,7 @@ class SearchResults extends Component {
     constructor(props) {
         super(props);
     }
-    over(index){
+    over(index) {
         console.log(index);
     }
     render() {
@@ -47,16 +51,16 @@ class SearchResults extends Component {
         if (data) {
             const pois = data.searchResults.pois;
             return (
-                <div className={style.root}>
+                <div ref='root' className={style.root}>
                     <MobileTearSheet>
                         <List>
                             {pois.map((poi, index) => (
-                                <div key={poi.id} onMouseOver={()=>this.over(index + 1)}>
+                                <div key={poi.id} onMouseOver={() => this.over(index + 1)}>
                                     <ListItem
                                         style={styles.listItem}
-                                        primaryText={<span style={styles.primaryText}>{(index + 1) + '.' + poi.name}</span>}
+                                        primaryText={<p style={styles.primaryText} title={poi.name}>{(index + 1) + '.' + poi.name}</p>}
                                         secondaryText={<p style={styles.secondaryText}>{poi.adname + '    ' + poi.address}</p>}
-                                        secondaryTextLines={2}
+                                        secondaryTextLines={1}
                                         />
                                     <Divider className={style.divider} />
                                 </div>

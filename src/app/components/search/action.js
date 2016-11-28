@@ -12,7 +12,7 @@ export const search_ASYN = key => (dispatch, getState) => {
     let uRLSearchParams = new URLSearchParams();
     uRLSearchParams.append('keywords', key);
     uRLSearchParams.append('output', 'json');
-    uRLSearchParams.append('offset', 100);
+    uRLSearchParams.append('offset', 20);
     uRLSearchParams.append('page', 1);
     uRLSearchParams.append('key', '5f18940da16191c19251d4bc11b56925');
     uRLSearchParams.append('extensions', 'all');

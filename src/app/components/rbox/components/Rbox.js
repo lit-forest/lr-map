@@ -32,10 +32,8 @@ class Rbox extends Component {
         })
     }
     /**
-     * 
-     * 
-     * @returns
-     * 
+     * @child 异步请求返回的查询结果的数据
+     * @returns Rbox组件
      * @memberOf Rbox
      */
     render() {

@@ -16,6 +16,10 @@ class Search extends Component {
         const {onSearchClick} = this.props;
         onSearchClick(this.refs.searchVal.value);
     }
+    handleKeyPress(e) {
+        if(e.which===13);
+        this.search();
+    }
     /**
      * 
      * 
@@ -29,7 +33,7 @@ class Search extends Component {
                 <header className={styles.searchbox}>
                     <img className={styles.logo} src={logoSrc} draggable="false" />
                     <div className={styles.iptbox}>
-                        <input type="text" ref="searchVal" placeholder="搜索地名、公交站、地铁站" className={styles.searchipt} />
+                        <input type="text" ref="searchVal" onKeyPress={(e) => this.handleKeyPress(e)} placeholder="搜索地名、公交站、地铁站" className={styles.searchipt} />
                     </div>
                     <span id="separator" className={styles.separator}></span>
                     <div className={styles.direntry} id="searchbtn" title="搜索" onClick={() => this.search()}>
