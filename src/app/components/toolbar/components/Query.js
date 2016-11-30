@@ -22,13 +22,10 @@ const styles = {
         cursor: 'pointer'
     },
     img: {
-        position:'absolute',
-        width: '35px',
-        height: '35px',
-        borderRadius: '50%',
-        overflow: 'hidden',
+        position: 'absolute',
         marginTop: -5,
-        marginLeft: -17
+        marginLeft: -17,
+        backgroundColor: 'white'
     },
     checkbox: {
         marginTop: 10,
@@ -42,31 +39,35 @@ class Query extends Component {
             <div style={styles.root}>
                 <div style={styles.item}>
                     <Checkbox
+                        defaultChecked={true}
                         style={styles.checkbox}
-                        checkedIcon={<img style={styles.img} src="img/meishi.png" />}
-                        uncheckedIcon={<img style={styles.img} src="img/meishi_bw.png" />} />
-                        <p>美食</p>
+                        checkedIcon={<img style={styles.img} src="img/food.png" />}
+                        uncheckedIcon={<img style={styles.img} src="img/food_bw.png" />} />
+                    <p>美食</p>
                 </div>
                 <div style={styles.item}>
                     <Checkbox
+                        defaultChecked={true}
                         style={styles.checkbox}
-                        checkedIcon={<img style={styles.img} src="img/hotel.png" />}
-                        uncheckedIcon={<img style={styles.img} src="img/hotel_bw.png" />} />
-                        <p>酒店</p>
+                        checkedIcon={<img style={styles.img} src="img/entertainment.png" />}
+                        uncheckedIcon={<img style={styles.img} src="img/entertainment_bw.png" />} />
+                    <p>酒店</p>
                 </div>
                 <div style={styles.item}>
                     <Checkbox
+                        defaultChecked={true}
+                        style={styles.checkbox}
+                        checkedIcon={<img style={styles.img} src="img/subway.png" />}
+                        uncheckedIcon={<img style={styles.img} src="img/subway_bw.png" />} />
+                    <p>景点</p>
+                </div>
+                <div style={styles.item}>
+                    <Checkbox
+                        defaultChecked={true}
                         style={styles.checkbox}
                         checkedIcon={<img style={styles.img} src="img/scene.png" />}
                         uncheckedIcon={<img style={styles.img} src="img/scene_bw.png" />} />
-                        <p>景点</p>
-                </div>
-                <div style={styles.item}>
-                    <Checkbox
-                        style={styles.checkbox}
-                        checkedIcon={<img style={styles.img} src="img/residence.png" />}
-                        uncheckedIcon={<img style={styles.img} src="img/residence_bw.png" />} />
-                        <p>小区</p>
+                    <p>小区</p>
                 </div>
                 <h1>qq</h1>
             </div>

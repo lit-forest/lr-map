@@ -79,7 +79,7 @@ class LayerCtrl extends Component {
     render() {
         return (
             <div style={styles.panel}>
-                <MobileTearSheet height={300}>
+                <MobileTearSheet height={360}>
                     <ListItem
                         primaryText="基础图层"
                         leftIcon={<ContentInbox />}

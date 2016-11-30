@@ -25,12 +25,12 @@ class Map extends React.Component {
      */
     componentDidMount() {
         let lrmap = L.map("map", {
-            center: [28.41, 121.355],
+            center: [37.81, -122.41],
             zoom: 12,
             zoomControl: false,
             attributionControl:false
         });
-        let basemapLayer = new L.TileLayer('https://b.tiles.mapbox.com/v4/mapbox.run-bike-hike/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpbTgzcHQxMzAxMHp0eWx4bWQ1ZHN2NGcifQ.WVwjmljKYqKciEZIC3NfLA', {
+        let basemapLayer = new L.TileLayer('http://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpbTgzcHQxMzAxMHp0eWx4bWQ1ZHN2NGcifQ.WVwjmljKYqKciEZIC3NfLA', {
             id: 'streetLayer'
         }).addTo(lrmap);
 
