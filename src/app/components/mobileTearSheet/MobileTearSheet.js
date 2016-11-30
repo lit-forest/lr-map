@@ -22,7 +22,7 @@ class MobileTearSheet extends Component {
         const {children} = this.props;
         const styles = {
             root: {
-                marginBottom: 24,
+                marginBottom: 4,
                 marginRight: 24,
                 maxWidth: 360,
                 width: '100%',
@@ -44,10 +44,10 @@ class MobileTearSheet extends Component {
 
 MobileTearSheet.propTypes = {
     children: PropTypes.node,
-    height: PropTypes.number.isRequired,
+    height: PropTypes.number
 }
 MobileTearSheet.defaultProps = {
-    height: 500,
+    
 }
 
 export default MobileTearSheet;
