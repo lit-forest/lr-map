@@ -10,7 +10,7 @@ import ContentInbox from 'material-ui/svg-icons/content/inbox';
 import ContentDrafts from 'material-ui/svg-icons/content/drafts';
 import ContentSend from 'material-ui/svg-icons/content/send';
 import ActionAssignment from 'material-ui/svg-icons/action/assignment';
-import { blue500, yellow600 } from 'material-ui/styles/colors';
+import { red500, blue500 } from 'material-ui/styles/colors';
 
 import MobileTearSheet from '../../mobileTearSheet/MobileTearSheet';
 
@@ -67,7 +67,7 @@ class LayerCtrl extends Component {
             return <ListItem
                 key={layer.url}
                 primaryText={layer.name}
-                leftAvatar={<Avatar src={layer.img} size={30} style={styles.avatar} />}
+                leftAvatar={<img src={layer.img}  style={styles.avatar} />}
                 rightToggle={<Toggle defaultToggled={layer.show} onClick={() => this.handleToggle(layer.id)} />}
                 style={styles.listItem}
                 />
@@ -79,18 +79,18 @@ class LayerCtrl extends Component {
     render() {
         return (
             <div style={styles.panel}>
-                <MobileTearSheet height={360}>
+                <MobileTearSheet height={320}>
                     <ListItem
                         primaryText="基础图层"
-                        leftIcon={<ContentInbox />}
+                        leftIcon={<ContentInbox color={blue500}/>}
                         initiallyOpen={false}
                         primaryTogglesNestedList={true}
                         style={styles.listRoot}
                         nestedItems={this.createItemsArr(_layer_global.baseLayer)}
                         />
                     <ListItem
-                        primaryText="设备图层"
-                        leftIcon={<ContentInbox />}
+                        primaryText="叠加图层"
+                        leftIcon={<ContentInbox color={blue500}/>}
                         initiallyOpen={true}
                         primaryTogglesNestedList={true}
                         style={styles.listRoot}

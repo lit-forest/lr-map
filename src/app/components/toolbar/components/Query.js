@@ -51,7 +51,7 @@ class Query extends Component {
                         style={styles.checkbox}
                         checkedIcon={<img style={styles.img} src="img/entertainment.png" />}
                         uncheckedIcon={<img style={styles.img} src="img/entertainment_bw.png" />} />
-                    <p>酒店</p>
+                    <p>娱乐</p>
                 </div>
                 <div style={styles.item}>
                     <Checkbox
@@ -59,7 +59,7 @@ class Query extends Component {
                         style={styles.checkbox}
                         checkedIcon={<img style={styles.img} src="img/subway.png" />}
                         uncheckedIcon={<img style={styles.img} src="img/subway_bw.png" />} />
-                    <p>景点</p>
+                    <p>地铁</p>
                 </div>
                 <div style={styles.item}>
                     <Checkbox
@@ -67,7 +67,7 @@ class Query extends Component {
                         style={styles.checkbox}
                         checkedIcon={<img style={styles.img} src="img/scene.png" />}
                         uncheckedIcon={<img style={styles.img} src="img/scene_bw.png" />} />
-                    <p>小区</p>
+                    <p>景点</p>
                 </div>
                 <h1>qq</h1>
             </div>
