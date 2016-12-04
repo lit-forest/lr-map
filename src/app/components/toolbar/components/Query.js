@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import Checkbox from 'material-ui/Checkbox';
 import { List, ListItem } from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
+import * as draw from '../libs/draw';
 
 const styles = {
     root: {
@@ -34,6 +35,15 @@ const styles = {
 }
 
 class Query extends Component {
+    constructor(props) {
+        super(props);
+    }
+    drawEnable(a){
+        draw.drawEnable(a);
+    }
+    drawDisable(a){
+        draw.drawDisable(a);
+    }
     render() {
         return (
             <div style={styles.root}>
@@ -69,7 +79,8 @@ class Query extends Component {
                         uncheckedIcon={<img style={styles.img} src="img/scene_bw.png" />} />
                     <p>景点</p>
                 </div>
-                <h1>qq</h1>
+                <h1 onClick={()=>this.drawEnable(123123)}>qq</h1>
+                <h1 onClick={()=>this.drawDisable(123123)}>qq</h1>
             </div>
         );
     }

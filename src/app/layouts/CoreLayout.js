@@ -55,7 +55,6 @@ class CoreLayout extends Component {
                         })}
                     </ReactCSSTransitionGroup>
                 </Bucket>
-
             </div>
         )
     }

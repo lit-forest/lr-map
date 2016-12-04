@@ -8,7 +8,7 @@ import L from 'leaflet';
  * @extends {React.Component}
  */
 class Map extends React.Component {
-    
+
     /**
      * @doc 地图容器DOM
      * @returns 地图容器
@@ -28,7 +28,7 @@ class Map extends React.Component {
             center: [37.81, -122.41],
             zoom: 12,
             zoomControl: false,
-            attributionControl:false
+            attributionControl: false
         });
         let basemapLayer = new L.TileLayer('http://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpbTgzcHQxMzAxMHp0eWx4bWQ1ZHN2NGcifQ.WVwjmljKYqKciEZIC3NfLA', {
             id: 'streetLayer'
