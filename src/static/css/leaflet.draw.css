@@ -7,11 +7,17 @@
 }
 
 .leaflet-draw-toolbar {
+    z-index: 10000;
+    /*transform: rotate(90deg);*/
     margin-top: 12px;
 }
 
 .leaflet-draw-toolbar-top {
-    margin-top: 0;
+    z-index: 10000;
+    margin-top: 63px;
+    margin-right: 83px;
+    width: 27px;
+    background: white;
 }
 
 .leaflet-draw-toolbar-notop a:first-child {

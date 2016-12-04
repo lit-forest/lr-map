@@ -38,11 +38,11 @@ class Query extends Component {
     constructor(props) {
         super(props);
     }
-    drawEnable(a){
-        draw.drawEnable(a);
+    drawEnable() {
+        draw.drawEnable();
     }
-    drawDisable(a){
-        draw.drawDisable(a);
+    drawDisable() {
+        draw.drawDisable();
     }
     render() {
         return (
@@ -79,11 +79,48 @@ class Query extends Component {
                         uncheckedIcon={<img style={styles.img} src="img/scene_bw.png" />} />
                     <p>景点</p>
                 </div>
-                <h1 onClick={()=>this.drawEnable(123123)}>qq</h1>
-                <h1 onClick={()=>this.drawDisable(123123)}>qq</h1>
+                <div style={styles.item}>
+                    <Checkbox
+                        defaultChecked={true}
+                        style={styles.checkbox}
+                        checkedIcon={<img style={styles.img} src="img/food.png" />}
+                        uncheckedIcon={<img style={styles.img} src="img/food_bw.png" />} />
+                    <p>美食</p>
+                </div>
+                <div style={styles.item}>
+                    <Checkbox
+                        defaultChecked={true}
+                        style={styles.checkbox}
+                        checkedIcon={<img style={styles.img} src="img/entertainment.png" />}
+                        uncheckedIcon={<img style={styles.img} src="img/entertainment_bw.png" />} />
+                    <p>娱乐</p>
+                </div>
+                <div style={styles.item}>
+                    <Checkbox
+                        defaultChecked={true}
+                        style={styles.checkbox}
+                        checkedIcon={<img style={styles.img} src="img/subway.png" />}
+                        uncheckedIcon={<img style={styles.img} src="img/subway_bw.png" />} />
+                    <p>地铁</p>
+                </div>
+                <div style={styles.item}>
+                    <Checkbox
+                        defaultChecked={true}
+                        style={styles.checkbox}
+                        checkedIcon={<img style={styles.img} src="img/scene.png" />}
+                        uncheckedIcon={<img style={styles.img} src="img/scene_bw.png" />} />
+                    <p>景点</p>
+                </div>
             </div>
         );
     }
+    componentDidMount() {
+        setTimeout(this.drawEnable, 10);
+    }
+    componentWillUnmount() {
+        this.drawDisable()
+    }
+
 }
 
 Query.propTypes = {

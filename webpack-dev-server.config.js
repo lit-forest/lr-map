@@ -12,7 +12,7 @@ const config = {
       'webpack/hot/dev-server',
       'webpack/hot/only-dev-server',
       path.join(__dirname, '/src/app/main.js')],
-    vendor: ['react', 'react-dom', 'react-router', 'leaflet']
+    vendor: ['react', 'react-dom', 'react-router', 'leaflet','leaflet-draw']
   },
   // Server Configuration options
   devServer: {

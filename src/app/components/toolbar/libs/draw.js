@@ -1,14 +1,21 @@
 import L from 'leaflet';
 import LD from 'leaflet-draw';
 
+var drawControl=null;
+
 export const drawEnable = (a) => {
+    L.drawLocal.draw.toolbar.buttons.polygon = 'Draw a sexy polygon!';
+    // L.drawLocal.draw.toolbar.buttons.polygon = 'Draw a sexy polygon!';
+    // L.drawLocal.draw.toolbar.buttons.polygon = 'Draw a sexy polygon!';
+    // L.drawLocal.draw.toolbar.buttons.polygon = 'Draw a sexy polygon!';
+
     var drawnItems = new L.FeatureGroup();
     lrmap.addLayer(drawnItems);
-    var drawControl = new L.Control.Draw({
+    drawControl = new L.Control.Draw({
         position: 'topright',
-        edit: {
-            featureGroup: drawnItems
-        }
+        // edit: {
+        //     featureGroup: drawnItems
+        // }
     });
     lrmap.addControl(drawControl);
     lrmap.on(L.Draw.Event.CREATED, function (e) {
@@ -30,16 +37,7 @@ export const drawEnable = (a) => {
         });
         console.log("Edited " + countOfEditedLayers + " layers");
     });
-    var modifiedDraw = L.drawLocal.extend({
-         draw: {
-             toolbar: {
-                 buttons: {
-                     polygon: '画个面试试'
-                 }
-             }
-         }
-     });
 }
 export const drawDisable = () => {
-
+    lrmap.removeControl(drawControl);
 }
