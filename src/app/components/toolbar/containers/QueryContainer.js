@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import Query from '../components/Query'
-import {actionCreator} from 'actionCreatorPath'
+import {Query_ASYN} from '../modules/query/action'
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -10,8 +10,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        dispatch1: () =>{
-            dispatch(actionCreator)
+        onDrawEnd: (queryKey) =>{
+            dispatch(Query_ASYN(queryKey))
         }
     }
 }
@@ -22,4 +22,4 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(Query)
+export default connect(mapStateToProps, mapDispatchToProps)(Query)

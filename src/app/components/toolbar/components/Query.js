@@ -45,6 +45,8 @@ class Query extends Component {
         draw.drawDisable();
     }
     render() {
+        const {onDrawEnd} = this.props;
+        onDrawEnd('南京大学');
         return (
             <div style={styles.root}>
                 <div style={styles.item}>
@@ -77,7 +79,7 @@ class Query extends Component {
                         style={styles.checkbox}
                         checkedIcon={<img style={styles.img} src="img/scene.png" />}
                         uncheckedIcon={<img style={styles.img} src="img/scene_bw.png" />} />
-                    <p>景点</p>
+                    <p>公交</p>
                 </div>
                 <div style={styles.item}>
                     <Checkbox
@@ -85,7 +87,7 @@ class Query extends Component {
                         style={styles.checkbox}
                         checkedIcon={<img style={styles.img} src="img/food.png" />}
                         uncheckedIcon={<img style={styles.img} src="img/food_bw.png" />} />
-                    <p>美食</p>
+                    <p>学校</p>
                 </div>
                 <div style={styles.item}>
                     <Checkbox
@@ -93,7 +95,7 @@ class Query extends Component {
                         style={styles.checkbox}
                         checkedIcon={<img style={styles.img} src="img/entertainment.png" />}
                         uncheckedIcon={<img style={styles.img} src="img/entertainment_bw.png" />} />
-                    <p>娱乐</p>
+                    <p>医院</p>
                 </div>
                 <div style={styles.item}>
                     <Checkbox
@@ -101,7 +103,7 @@ class Query extends Component {
                         style={styles.checkbox}
                         checkedIcon={<img style={styles.img} src="img/subway.png" />}
                         uncheckedIcon={<img style={styles.img} src="img/subway_bw.png" />} />
-                    <p>地铁</p>
+                    <p>酒店</p>
                 </div>
                 <div style={styles.item}>
                     <Checkbox
@@ -114,11 +116,15 @@ class Query extends Component {
             </div>
         );
     }
+    
+    componentWillMount() {
+        setTimeout(this.drawEnable, 200);
+    }
     componentDidMount() {
-        setTimeout(this.drawEnable, 10);
+        
     }
     componentWillUnmount() {
-        this.drawDisable()
+        this.drawDisable();
     }
 
 }

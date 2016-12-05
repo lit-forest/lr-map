@@ -14,10 +14,10 @@
 
 .leaflet-draw-toolbar-top {
     z-index: 10000;
-    margin-top: 63px;
+    margin-top: 83px;
     margin-right: 83px;
     width: 27px;
-    background: white;
+    background: rgba(255,255,255,0.15)
 }
 
 .leaflet-draw-toolbar-notop a:first-child {
@@ -84,26 +84,11 @@
     border-left: none;
 }
 
-.leaflet-draw-actions li:last-child a {
-    -webkit-border-radius: 0 4px 4px 0;
-    border-radius: 0 4px 4px 0;
-}
-
-.leaflet-right .leaflet-draw-actions li:last-child a {
-    -webkit-border-radius: 0;
-    border-radius: 0;
-}
-
-.leaflet-right .leaflet-draw-actions li:first-child a {
-    -webkit-border-radius: 4px 0 0 4px;
-    border-radius: 4px 0 0 4px;
-}
-
 .leaflet-draw-actions a {
     background-color: #919187;
-    border-left: 1px solid #AAA;
-    color: #FFF;
-    font: 11px/19px "Helvetica Neue", Arial, Helvetica, sans-serif;
+    border-left: 1px solid white;
+    font: 11px/19px 'Microsoft Yahei',sans-serif;
+    color: white;
     line-height: 28px;
     text-decoration: none;
     padding-left: 10px;
@@ -279,8 +264,9 @@
     font-size: 1%;
     opacity: 0.6;
     position: absolute;
-    width: 5px;
-    height: 5px;
+    width: 4px;
+    height: 4px;
+    -webkit-border-radius: 2px; 
 }
 
 /* ================================================================== */

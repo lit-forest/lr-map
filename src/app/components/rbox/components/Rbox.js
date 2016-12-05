@@ -37,16 +37,19 @@ class Rbox extends Component {
      * @memberOf Rbox
      */
     render() {
-        const {child} = this.props;
+        const {searchRes,queryRes} = this.props;
+        console.log(searchRes)
+        console.log(queryRes)
         return (
             <div id="rbox" className={this.state.show ? styles.rboxShow : styles.rboxNone}>
-                <SearchResults data={child} />
+                <SearchResults data={searchRes} />
                 <div className={styles.panCtrl} onClick={() => this.toggle()}>
-                    <i className={styles.fa + ' ' + (this.state.show ? styles.faChevronUp : styles.faChevronDown)} id="contractionInsideBtnUp"></i>
+                    <i className={styles.fa + ' ' + (this.state.show ? styles.faChevronUp : styles.faChevronDown)}></i>
                 </div>
             </div>
         );
     }
+
 }
 
 Rbox.propTypes = {

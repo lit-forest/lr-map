@@ -3,7 +3,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import LayerCtrl from './components/LayerCtrl';
 import Bookmark from './components/Bookmark';
-import Query from './components/Query';
+import Query from './containers/QueryContainer';
 import Tool from './components/Tool';
 import FullScreen from './components/FullScreen';
 

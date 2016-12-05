@@ -47,9 +47,8 @@ class SearchResults extends Component {
     }
     render() {
         const {data} = this.props;
-        console.log(data);
         if (data) {
-            const pois = data.searchResults.pois;
+            const pois = data.queryResults.pois;
             return (
                 <div ref='root' className={style.root}>
                     <MobileTearSheet>

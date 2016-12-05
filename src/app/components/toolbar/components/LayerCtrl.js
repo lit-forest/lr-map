@@ -72,7 +72,6 @@ class LayerCtrl extends Component {
                 style={styles.listItem}
                 />
         })
-        console.log(layerArr)
         return layerArr;
     }
 

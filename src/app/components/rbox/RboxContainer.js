@@ -3,7 +3,8 @@ import Rbox from './components/Rbox'
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        child: state.rbox
+        searchRes: state.search,
+        queryRes:state.query
     }
 }
 
