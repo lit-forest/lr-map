@@ -19,7 +19,8 @@ class Rbox extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            show: true
+            show: true,
+            data: null
         }
     }
     /**
@@ -32,17 +33,33 @@ class Rbox extends Component {
         })
     }
     /**
+     * @doc 设置要显示的子组件'
+     * @param {Object} nextProps
+     * @memberOf Rbox
+     */
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.searchRes == this.props.searchRes && nextProps.queryRes == this.props.queryRes) {
+
+        } else if (nextProps.searchRes != this.props.searchRes && nextProps.queryRes == this.props.queryRes) {
+            this.setState({ data: nextProps.searchRes.searchResults });
+
+        } else if (nextProps.searchRes == this.props.searchRes && nextProps.queryRes != this.props.queryRes) {
+            this.setState({ data: nextProps.queryRes.queryResults });
+
+        }
+    }
+    /**
      * @child 异步请求返回的查询结果的数据
      * @returns Rbox组件
      * @memberOf Rbox
      */
     render() {
-        const {searchRes,queryRes} = this.props;
+        const {searchRes, queryRes} = this.props;
         console.log(searchRes)
         console.log(queryRes)
         return (
             <div id="rbox" className={this.state.show ? styles.rboxShow : styles.rboxNone}>
-                <SearchResults data={searchRes} />
+                <SearchResults data={this.state.data} />
                 <div className={styles.panCtrl} onClick={() => this.toggle()}>
                     <i className={styles.fa + ' ' + (this.state.show ? styles.faChevronUp : styles.faChevronDown)}></i>
                 </div>

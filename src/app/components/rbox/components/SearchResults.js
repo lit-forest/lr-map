@@ -38,17 +38,33 @@ const styles = {
     }
 }
 
+/**
+ * @author sylvenas
+ * @doc 查询结果展示组件，一般作为rbox的子组件'
+ * @class SearchResults
+ * @extends {Component}
+ */
 class SearchResults extends Component {
     constructor(props) {
         super(props);
     }
+    /**
+     * @doc 鼠标悬停每一行的事件
+     * @param {string} index
+     * @memberOf SearchResults
+     */
     over(index) {
         console.log(index);
     }
+    /**
+     * @data 由rbox传入的数据,一般为属性查询结果，或者空间查询结果，前者更过
+     * @returns
+     * @memberOf SearchResults
+     */
     render() {
         const {data} = this.props;
         if (data) {
-            const pois = data.queryResults.pois;
+            const pois = data.pois;
             return (
                 <div ref='root' className={style.root}>
                     <MobileTearSheet>
