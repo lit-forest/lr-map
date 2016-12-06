@@ -3,7 +3,11 @@ import LD from 'leaflet-draw';
 
 var drawControl = null;
 var drawnItems = new L.FeatureGroup();
-export const drawEnable = (a) => {
+var queryKeys = '美食|娱乐|地铁|公交|';
+export const setKeys = (keys) => {
+    queryKeys = keys;
+}
+export const drawEnable = (onDrawEnd) => {
     L.drawLocal = {
         draw: {
             toolbar: {
@@ -102,7 +106,6 @@ export const drawEnable = (a) => {
             }
         }
     };
-    console.log(drawnItems);
     var layer = null,
         shapeOptions = {
             shapeOptions: {
@@ -127,11 +130,16 @@ export const drawEnable = (a) => {
         lrmap.addLayer(drawnItems);
     });
     lrmap.on(L.Draw.Event.CREATED, function (e) {
+        let polygon = '';
         let type = e.layerType;
         layer = e.layer;
         layer.bindPopup('正在查询该范围内的设施');
         drawnItems.addLayer(layer);
-        
+        for (let i = 0, arr = layer._latlngs[0], len = layer._latlngs[0].length; i < len; i++) {
+            polygon += arr[i].lng + ',' + arr[i].lat + '|'
+        }
+        polygon += layer._latlngs[0][0].lng + ',' + layer._latlngs[0][0].lat
+        onDrawEnd(polygon,queryKeys)
     });
 }
 export const drawDisable = () => {

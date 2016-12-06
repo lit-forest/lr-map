@@ -10,8 +10,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        onDrawEnd: (queryKey) =>{
-            dispatch(Query_ASYN(queryKey))
+        onDrawEnd: (polygon,queryKey) =>{
+            dispatch(Query_ASYN(polygon,queryKey))
         }
     }
 }

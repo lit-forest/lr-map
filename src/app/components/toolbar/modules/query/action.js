@@ -7,9 +7,10 @@ export const query = (queryResults) => ({
 
 
 
-export const Query_ASYN = key => (dispatch, getState) => {
+export const Query_ASYN = (polygon,key) => (dispatch, getState) => {
 
     let uRLSearchParams = new URLSearchParams();
+    uRLSearchParams.append('polygon', polygon);
     uRLSearchParams.append('keywords', key);
     uRLSearchParams.append('output', 'json');
     uRLSearchParams.append('offset', 20);
@@ -17,7 +18,7 @@ export const Query_ASYN = key => (dispatch, getState) => {
     uRLSearchParams.append('key', '5f18940da16191c19251d4bc11b56925');
     uRLSearchParams.append('extensions', 'all');
 
-    return fetch('http://restapi.amap.com/v3/place/text?', {
+    return fetch('http://restapi.amap.com/v3/place/polygon?', {
         method: "POST",
         mode: "cors",
         headers: {

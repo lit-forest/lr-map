@@ -34,23 +34,110 @@ const styles = {
     }
 }
 
+let onDrawEnd = null;
+
 class Query extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            food: true,
+            entertainment: true,
+            subway: true,
+            publicCar: true,
+            school: false,
+            hospital: false,
+            hotel: false,
+            scene: false
+        }
+        onDrawEnd = this.props.onDrawEnd;
     }
     drawEnable() {
-        draw.drawEnable();
+        draw.drawEnable(onDrawEnd);
     }
     drawDisable() {
         draw.drawDisable();
     }
+    checkHandle(key) {
+        switch (key) {
+            case 'food':
+                this.setState({
+                    food: !this.state.food
+                });
+                break;
+            case 'entertainment':
+                this.setState({
+                    entertainment: !this.state.entertainment
+                });
+                break;
+            case 'subway':
+                this.setState({
+                    subway: !this.state.subway
+                });
+                break;
+            case 'publicCar':
+                this.setState({
+                    publicCar: !this.state.publicCar
+                });
+                break;
+            case 'school':
+                this.setState({
+                    school: !this.state.school
+                });
+                break;
+            case 'hospital':
+                this.setState({
+                    hospital: !this.state.hospital
+                });
+                break;
+            case 'hotel':
+                this.setState({
+                    hotel: !this.state.hotel
+                });
+                break;
+            case 'scene':
+                this.setState({
+                    scene: !this.state.scene
+                });
+                break;
+            default:
+                break;
+        }
+    }
+
     render() {
-        const {onDrawEnd} = this.props;
-        onDrawEnd('南京大学');
+        let keys = '';
+        // const {onDrawEnd} = this.props;
+        // onDrawEnd('南京大学');
+        if (this.state.food === true) {
+            keys += '美食|'
+        }
+        if (this.state.entertainment === true) {
+            keys += '娱乐|'
+        }
+        if (this.state.subway === true) {
+            keys += '地铁|'
+        }
+        if (this.state.publicCar === true) {
+            keys += '公交|'
+        }
+        if (this.state.school === true) {
+            keys += '学校|'
+        }
+        if (this.state.hospital === true) {
+            keys += '医院|'
+        }
+        if (this.state.hotel === true) {
+            keys += '酒店|'
+        }
+        if (this.state.scene === true) {
+            keys += '景点|'
+        }
+        draw.setKeys(keys);
         return (
             <div style={styles.root}>
                 <div style={styles.item}>
                     <Checkbox
+                        onCheck={() => this.checkHandle('food')}
                         defaultChecked={true}
                         style={styles.checkbox}
                         checkedIcon={<img style={styles.img} src="img/food.png" />}
@@ -59,6 +146,7 @@ class Query extends Component {
                 </div>
                 <div style={styles.item}>
                     <Checkbox
+                        onCheck={() => this.checkHandle('entertainment')}
                         defaultChecked={true}
                         style={styles.checkbox}
                         checkedIcon={<img style={styles.img} src="img/entertainment.png" />}
@@ -67,6 +155,7 @@ class Query extends Component {
                 </div>
                 <div style={styles.item}>
                     <Checkbox
+                        onCheck={() => this.checkHandle('subway')}
                         defaultChecked={true}
                         style={styles.checkbox}
                         checkedIcon={<img style={styles.img} src="img/subway.png" />}
@@ -75,6 +164,7 @@ class Query extends Component {
                 </div>
                 <div style={styles.item}>
                     <Checkbox
+                        onCheck={() => this.checkHandle('publicCar')}
                         defaultChecked={true}
                         style={styles.checkbox}
                         checkedIcon={<img style={styles.img} src="img/scene.png" />}
@@ -83,7 +173,8 @@ class Query extends Component {
                 </div>
                 <div style={styles.item}>
                     <Checkbox
-                        defaultChecked={true}
+                        onCheck={() => this.checkHandle('school')}
+                        defaultChecked={false}
                         style={styles.checkbox}
                         checkedIcon={<img style={styles.img} src="img/food.png" />}
                         uncheckedIcon={<img style={styles.img} src="img/food_bw.png" />} />
@@ -91,7 +182,8 @@ class Query extends Component {
                 </div>
                 <div style={styles.item}>
                     <Checkbox
-                        defaultChecked={true}
+                        onCheck={() => this.checkHandle('hospital')}
+                        defaultChecked={false}
                         style={styles.checkbox}
                         checkedIcon={<img style={styles.img} src="img/entertainment.png" />}
                         uncheckedIcon={<img style={styles.img} src="img/entertainment_bw.png" />} />
@@ -99,7 +191,8 @@ class Query extends Component {
                 </div>
                 <div style={styles.item}>
                     <Checkbox
-                        defaultChecked={true}
+                        onCheck={() => this.checkHandle('hotel')}
+                        defaultChecked={false}
                         style={styles.checkbox}
                         checkedIcon={<img style={styles.img} src="img/subway.png" />}
                         uncheckedIcon={<img style={styles.img} src="img/subway_bw.png" />} />
@@ -107,7 +200,8 @@ class Query extends Component {
                 </div>
                 <div style={styles.item}>
                     <Checkbox
-                        defaultChecked={true}
+                        onCheck={() => this.checkHandle('scene')}
+                        defaultChecked={false}
                         style={styles.checkbox}
                         checkedIcon={<img style={styles.img} src="img/scene.png" />}
                         uncheckedIcon={<img style={styles.img} src="img/scene_bw.png" />} />
@@ -116,12 +210,12 @@ class Query extends Component {
             </div>
         );
     }
-    
+
     componentWillMount() {
         setTimeout(this.drawEnable, 200);
     }
     componentDidMount() {
-        
+
     }
     componentWillUnmount() {
         this.drawDisable();
