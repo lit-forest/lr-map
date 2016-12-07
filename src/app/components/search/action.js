@@ -15,9 +15,8 @@ export const search_ASYN = key => (dispatch, getState) => {
     uRLSearchParams.append('offset', 20);
     uRLSearchParams.append('page', 1);
     uRLSearchParams.append('key', '5f18940da16191c19251d4bc11b56925');
-    uRLSearchParams.append('extensions', 'all');
 
-    return fetch('http://restapi.amap.com/v3/place/text?', {
+    return fetch('https://restapi.amap.com/v3/place/text?', {
         method: "POST",
         mode: "cors",
         headers: {

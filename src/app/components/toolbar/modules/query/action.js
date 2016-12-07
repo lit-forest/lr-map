@@ -16,9 +16,8 @@ export const Query_ASYN = (polygon,key) => (dispatch, getState) => {
     uRLSearchParams.append('offset', 20);
     uRLSearchParams.append('page', 1);
     uRLSearchParams.append('key', '5f18940da16191c19251d4bc11b56925');
-    uRLSearchParams.append('extensions', 'all');
 
-    return fetch('http://restapi.amap.com/v3/place/polygon?', {
+    return fetch('https://restapi.amap.com/v3/place/polygon?', {
         method: "POST",
         mode: "cors",
         headers: {
