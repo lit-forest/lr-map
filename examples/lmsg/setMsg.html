@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <input id="txt" type="text" />
+    <h1 id="WW">set mess</h1>
+    <script src="./lmsg.min.js"></script>
+    <script>
+        document.querySelector('#WW').addEventListener('click', onSendClicked);
+        function onSendClicked() {
+            lmsg.send('hi', { message: document.querySelector('#txt').value });
+        }
+    </script>
+</body>
+</html>
