@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import L from 'leaflet';
 
 import MobileTearSheet from '../../mobileTearSheet/MobileTearSheet';
 import { List, ListItem } from 'material-ui/List';
@@ -37,7 +38,8 @@ const styles = {
         marginTop: '10px'
     }
 }
-
+let markers = new L.FeatureGroup();
+let mouseOverMaker = new L.FeatureGroup();
 /**
  * @author sylvenas
  * @doc 查询结果展示组件，一般作为rbox的子组件'
@@ -53,8 +55,17 @@ class SearchResults extends Component {
      * @param {string} index
      * @memberOf SearchResults
      */
-    over(index) {
-        console.log(index);
+    onMouseOver(poi, index) {
+        let poiIcon = L.divIcon({
+            html: "<span>" + (index + 1) + '</span>',
+            className: 'onMouseOverPoiIcon',
+            iconSize: [32, 32]
+        });
+        mouseOverMaker.addLayer(L.marker(poi.location.split(',').reverse(), { icon: poiIcon }));
+        lrmap.addLayer(mouseOverMaker);
+    }
+    onMouseOut(poi) {
+        mouseOverMaker.clearLayers();
     }
     /**
      * @data 由rbox传入的数据,一般为属性查询结果，或者空间查询结果，前者更过
@@ -70,7 +81,7 @@ class SearchResults extends Component {
                     <MobileTearSheet>
                         <List>
                             {pois.map((poi, index) => (
-                                <div key={poi.id} onMouseOver={() => this.over(index + 1)}>
+                                <div key={poi.id} onMouseOver={() => this.onMouseOver(poi, index)} onMouseOut={() => this.onMouseOut(poi)}>
                                     <ListItem
                                         style={styles.listItem}
                                         primaryText={<p style={styles.primaryText} title={poi.name}>{(index + 1) + '.' + poi.name}</p>}
@@ -88,6 +99,21 @@ class SearchResults extends Component {
             return <div></div>
         }
     }
+    componentDidUpdate(prevProps, prevState) {
+        markers.clearLayers();
+        mouseOverMaker.clearLayers();
+        const pois = this.props.data.pois;
+        pois.map((poi, index) => {
+            let poiIcon = L.divIcon({
+                html: "<span>" + (index + 1) + '</span>',
+                className: 'poiIcon',
+                iconSize: [32, 32]
+            });
+            markers.addLayer(L.marker(poi.location.split(',').reverse(), { icon: poiIcon, id: index + 1 }).bindPopup(poi.name));
+        })
+        lrmap.addLayer(markers);
+    }
+
 }
 
 SearchResults.propTypes = {

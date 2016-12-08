@@ -54,9 +54,6 @@ class Rbox extends Component {
      * @memberOf Rbox
      */
     render() {
-        const {searchRes, queryRes} = this.props;
-        console.log(searchRes)
-        console.log(queryRes)
         return (
             <div id="rbox" className={this.state.show ? styles.rboxShow : styles.rboxNone}>
                 <SearchResults data={this.state.data} />

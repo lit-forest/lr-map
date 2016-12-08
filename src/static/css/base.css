@@ -26,3 +26,14 @@ a{
     opacity: 0;
     transition: opacity 300ms ease-in;
 }
+.poiIcon{
+    color: white;
+    text-align: center;
+    background-image: url(../img/poi.svg);
+}
+.onMouseOverPoiIcon{
+    z-index: 1000;
+    color: yellow;
+    text-align: center;
+    background-image: url(../img/poiOver.svg);
+}
