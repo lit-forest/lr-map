@@ -1,4 +1,4 @@
-#lmsg API docs    
+##lmsg API docs    
 ---   
 ### 1.Usage 
 Add **lsbridge.min.js** to your page:
