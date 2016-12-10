@@ -109,7 +109,7 @@ class SearchResults extends Component {
                 className: 'poiIcon',
                 iconSize: [32, 32]
             });
-            markers.addLayer(L.marker(poi.location.split(',').reverse(), { icon: poiIcon, id: index + 1 }).bindPopup(poi.name));
+            markers.addLayer(L.marker(poi.location.split(',').reverse(), { icon: poiIcon, id: index + 1 }).bindPopup(poi.name)).bindTooltip(poi.name).openTooltip();;
         })
         lrmap.addLayer(markers);
     }
