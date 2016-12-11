@@ -14,7 +14,7 @@
     padding: 5px 6px;
     cursor: move;
     height: 36px;
-    width: 225px;
+    width: 269px;
     font-family: 'Microsoft Yahei','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size: 12px;
 }
@@ -30,88 +30,87 @@ ol, ul {
 /*layer_item*/
 .layerItemSpan {
     float: left;
-    height: 36px;
     cursor: pointer;
     display: inline-block;
-    height: 16px;
     padding: 20px 10px 0;
     border-right: 1px #e5e5e5 solid;
-    background: url(../../../static/img/tools_layer_new.png) no-repeat;
 }
 
 .layerCtrl{
     composes:layerItemSpan;
-    padding-top: 20px;
-    background-position: 11px 4px;
+    background: url(../../../static/img/layerCtrl.svg) no-repeat;
+    background-position: 11px 0px;
 }
 .layerCtrl_active{
     composes:layerItemSpan;
-    padding-top: 20px;
-    background-position: 11px -45px;
+    background: url(../../../static/img/layerCtrlActive.svg) no-repeat;
+    background-position: 11px 0px;
 }
 .layerCtrl:hover{
     opacity: 0.6
 }
 .bookmark{
     composes:layerItemSpan;
-    background-position: 11px -336px;
+    background: url(../../../static/img/bookMaker.svg) no-repeat;
+    background-position: 15px 3px;
 }
 .bookmark_active{
     composes:layerItemSpan;
-    background-position: 11px -530px;
+    background: url(../../../static/img/bookMakerActive.svg) no-repeat;
+    background-position: 15px 3px;
 }
 .bookmark:hover{
     opacity: 0.6
 }
 .query{
     composes:layerItemSpan;
-    background-position: 11px -142px;
+    background: url(../../../static/img/query.svg) no-repeat;
+    background-position: 15px 3px;
 }
 .query_active{
     composes:layerItemSpan;
-    background-position: 11px -190px;
+    background: url(../../../static/img/queryActive.svg) no-repeat;
+    background-position: 15px 3px;
 }
 .query:hover{
     opacity: 0.6
 }
-/*tool_item*/
-.toolItemSpan {
-    float: left;
-    cursor: pointer;
-    display: inline-block;
-    height: 16px;
-    padding: 20px 10px 0;
-    border-right: 1px #e5e5e5 solid;
-    background: url(../../../static/img/tools_new.png) no-repeat;
-}
 .tool{
-    composes:toolItemSpan;
-    background-position: 11px 2px;
+    composes:layerItemSpan;
+    background: url(../../../static/img/tool.svg) no-repeat;
+    background-position: 13px 0px;
 }
 .tool_active{
-    composes:toolItemSpan;
-    background-position: 10px -62px;
+    composes:layerItemSpan;
+    background: url(../../../static/img/toolActive.svg) no-repeat;
+    background-position: 13px 0px;
 }
 .tool:hover{
     opacity: 0.6
 }
 .fullscreen{
-    composes:toolItemSpan;
-    border: 0;
-    background-position: 11px -255px;
+    composes:layerItemSpan;
+    background: url(../../../static/img/fullscreen.svg) no-repeat;
+    background-position: 15px 3px;
 }
 .fullscreen:hover{
     opacity: 0.6
 }
 .more{
-    composes:layerItemSpan;
-    border: 0;
-    background-position: 11px -336px;
+    float: left;
+    cursor: pointer;
+    display: inline-block;
+    padding: 20px 10px 0;
+    background: url(../../../static/img/more.svg) no-repeat;
+    background-position: 15px 3px;
 }
-.more_active{
-    composes:layerItemSpan;
-    border: 0;
-    background-position: 11px -530px;
+.moreActive{
+    float: left;
+    cursor: pointer;
+    display: inline-block;
+    padding: 20px 10px 0;
+    background: url(../../../static/img/moreActive.svg) no-repeat;
+    background-position: 15px 3px;
 }
 .more:hover{
     opacity: 0.6

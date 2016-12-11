@@ -37,3 +37,7 @@ a{
     text-align: center;
     background-image: url(../img/poiOver.svg);
 }
+.poiImg{
+    width: 100px;
+    height: 75px;
+}

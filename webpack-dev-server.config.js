@@ -56,7 +56,7 @@ const config = {
         loader: ExtractTextPlugin.extract('style', 'css?modules')
       },
       {
-        test: /\.(png|jpg)$/,
+        test: /\.(png|jpg|svg)$/,
         loader: 'url-loader?limit=8192&name=images/[name].[ext]'
       }
     ]

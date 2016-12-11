@@ -60,6 +60,25 @@
     text-align: center;
     cursor: pointer;
 }
+.close {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 48px;
+    top: 12px;
+    text-align: center;
+    cursor: pointer;
+}
+.close_none {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 48px;
+    top: 12px;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+}
 input{
 	color: inherit;
     font: inherit;
@@ -90,10 +109,10 @@ img, legend {
     top: 4px;
     left: 1px;
     font-size: 16px;
-    color: #ccc;
+    color: #515151;
 }
 .searchlogo:hover{
-	color: #00A0E9;
+	color: #07a7fb;
 }
 .fa {
     font: normal normal normal 14px/1 FontAwesome;
@@ -111,4 +130,7 @@ img, legend {
 }
 .fa_search:before {
     content: "\f002";
+}
+.fa_close:before {
+    content: "\f00d";
 }

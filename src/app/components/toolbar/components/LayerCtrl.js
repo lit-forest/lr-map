@@ -55,6 +55,9 @@ class LayerCtrl extends Component {
     constructor(props) {
         super(props);
     }
+    handleToggle(layerId){
+
+    }
     /**
      * @param {array} baseLayer
      * @returns {array}layerArr 

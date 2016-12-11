@@ -31,7 +31,8 @@ class Map extends React.Component {
             attributionControl: false
         });
         let basemapLayer = new L.TileLayer('https://a.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpbG10dnA3NzY3OTZ0dmtwejN2ZnUycjYifQ.1W5oTOnWXQ9R1w8u3Oo1yA', {
-            id: 'streetLayer'
+            id: 'streetLayer',
+            errorTileUrl:'img/errorTile.png'
         }).addTo(lrmap);
 
         L.control.scale().addTo(lrmap);

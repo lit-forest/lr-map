@@ -140,8 +140,8 @@ class Query extends Component {
                         onCheck={() => this.checkHandle('food')}
                         defaultChecked={true}
                         style={styles.checkbox}
-                        checkedIcon={<img style={styles.img} src="img/food.png" />}
-                        uncheckedIcon={<img style={styles.img} src="img/food_bw.png" />} />
+                        checkedIcon={<img style={styles.img} src="img/food.svg" />}
+                        uncheckedIcon={<img style={styles.img} src="img/food_bw.svg" />} />
                     <p>美食</p>
                 </div>
                 <div style={styles.item}>
@@ -149,8 +149,8 @@ class Query extends Component {
                         onCheck={() => this.checkHandle('entertainment')}
                         defaultChecked={true}
                         style={styles.checkbox}
-                        checkedIcon={<img style={styles.img} src="img/entertainment.png" />}
-                        uncheckedIcon={<img style={styles.img} src="img/entertainment_bw.png" />} />
+                        checkedIcon={<img style={styles.img} src="img/entertainment.svg" />}
+                        uncheckedIcon={<img style={styles.img} src="img/entertainment_bw.svg" />} />
                     <p>娱乐</p>
                 </div>
                 <div style={styles.item}>
@@ -158,8 +158,8 @@ class Query extends Component {
                         onCheck={() => this.checkHandle('subway')}
                         defaultChecked={true}
                         style={styles.checkbox}
-                        checkedIcon={<img style={styles.img} src="img/subway.png" />}
-                        uncheckedIcon={<img style={styles.img} src="img/subway_bw.png" />} />
+                        checkedIcon={<img style={styles.img} src="img/subway.svg" />}
+                        uncheckedIcon={<img style={styles.img} src="img/subway_bw.svg" />} />
                     <p>地铁</p>
                 </div>
                 <div style={styles.item}>
@@ -167,8 +167,8 @@ class Query extends Component {
                         onCheck={() => this.checkHandle('publicCar')}
                         defaultChecked={true}
                         style={styles.checkbox}
-                        checkedIcon={<img style={styles.img} src="img/scene.png" />}
-                        uncheckedIcon={<img style={styles.img} src="img/scene_bw.png" />} />
+                        checkedIcon={<img style={styles.img} src="img/publicCar.svg" />}
+                        uncheckedIcon={<img style={styles.img} src="img/publicCar_bw.svg" />} />
                     <p>公交</p>
                 </div>
                 <div style={styles.item}>
@@ -176,8 +176,8 @@ class Query extends Component {
                         onCheck={() => this.checkHandle('school')}
                         defaultChecked={false}
                         style={styles.checkbox}
-                        checkedIcon={<img style={styles.img} src="img/food.png" />}
-                        uncheckedIcon={<img style={styles.img} src="img/food_bw.png" />} />
+                        checkedIcon={<img style={styles.img} src="img/school.svg" />}
+                        uncheckedIcon={<img style={styles.img} src="img/school_bw.svg" />} />
                     <p>学校</p>
                 </div>
                 <div style={styles.item}>
@@ -185,8 +185,8 @@ class Query extends Component {
                         onCheck={() => this.checkHandle('hospital')}
                         defaultChecked={false}
                         style={styles.checkbox}
-                        checkedIcon={<img style={styles.img} src="img/entertainment.png" />}
-                        uncheckedIcon={<img style={styles.img} src="img/entertainment_bw.png" />} />
+                        checkedIcon={<img style={styles.img} src="img/hospital.svg" />}
+                        uncheckedIcon={<img style={styles.img} src="img/hospital_bw.svg" />} />
                     <p>医院</p>
                 </div>
                 <div style={styles.item}>
@@ -194,8 +194,8 @@ class Query extends Component {
                         onCheck={() => this.checkHandle('hotel')}
                         defaultChecked={false}
                         style={styles.checkbox}
-                        checkedIcon={<img style={styles.img} src="img/subway.png" />}
-                        uncheckedIcon={<img style={styles.img} src="img/subway_bw.png" />} />
+                        checkedIcon={<img style={styles.img} src="img/hotel.svg" />}
+                        uncheckedIcon={<img style={styles.img} src="img/hotel_bw.svg" />} />
                     <p>酒店</p>
                 </div>
                 <div style={styles.item}>
@@ -203,8 +203,8 @@ class Query extends Component {
                         onCheck={() => this.checkHandle('scene')}
                         defaultChecked={false}
                         style={styles.checkbox}
-                        checkedIcon={<img style={styles.img} src="img/scene.png" />}
-                        uncheckedIcon={<img style={styles.img} src="img/scene_bw.png" />} />
+                        checkedIcon={<img style={styles.img} src="img/scene.svg" />}
+                        uncheckedIcon={<img style={styles.img} src="img/scene_bw.svg" />} />
                     <p>景点</p>
                 </div>
             </div>

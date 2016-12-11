@@ -15,7 +15,7 @@
 .leaflet-draw-toolbar-top {
     z-index: 10000;
     margin-top: 83px;
-    margin-right: 83px;
+    margin-right: 43px;
     width: 27px;
     background: rgba(255,255,255,0.15)
 }

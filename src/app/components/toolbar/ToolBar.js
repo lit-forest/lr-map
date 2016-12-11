@@ -6,6 +6,7 @@ import Bookmark from './components/Bookmark';
 import Query from './containers/QueryContainer';
 import Tool from './components/Tool';
 import FullScreen from './components/FullScreen';
+import More from './components/More';
 
 import styles from './toolBar.css';
 
@@ -87,11 +88,21 @@ class ToolBar extends Component {
                         key: liId
                     });
                 break;
+            case 'more':
+                this.state.key == liId ?
+                    this.setState({
+                        item: <div />,
+                        key: 5
+                    }) : this.setState({
+                        item: <More />,
+                        key: liId
+                    });
+                break;
             default:
                 break;
         }
     }
-    
+
     render() {
         return (
             <div className={styles.layerbox}>
@@ -110,6 +121,9 @@ class ToolBar extends Component {
                     </li>
                     <li id='fullScreen' ref="fullScreen" onClick={() => this.itemClick(this.refs.fullScreen.id)}>
                         <span className={styles.fullscreen}>全屏</span>
+                    </li>
+                    <li id='more' ref="more" onClick={() => this.itemClick(this.refs.more.id)}>
+                        <span className={this.state.key === 'more' ? styles.moreActive : styles.more}>更多</span>
                     </li>
                 </ul>
                 <ReactCSSTransitionGroup

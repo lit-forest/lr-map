@@ -109,7 +109,10 @@ class SearchResults extends Component {
                 className: 'poiIcon',
                 iconSize: [32, 32]
             });
-            markers.addLayer(L.marker(poi.location.split(',').reverse(), { icon: poiIcon, id: index + 1 }).bindPopup(poi.name)).bindTooltip(poi.name).openTooltip();;
+            let imgSrc = '';
+            if (poi.photos.length > 0) { imgSrc = poi.photos[0].url } else { imgSrc = '' };
+            let poiPopup = L.popup().setContent("<p>名称:" + poi.name + "</p><p>地址:" + poi.address + "</p><p>电话:" + poi.tel + "</p><img src='" + imgSrc + "' class='poiImg'/>");
+            markers.addLayer(L.marker(poi.location.split(',').reverse(), { icon: poiIcon, id: index + 1 }).bindPopup(poiPopup)).bindTooltip(poi.name);
         })
         lrmap.addLayer(markers);
     }
