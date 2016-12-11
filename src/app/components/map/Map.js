@@ -25,8 +25,11 @@ class Map extends React.Component {
      */
     componentDidMount() {
         let lrmap = L.map("map", {
-            center: [31.3, 120.55],
-            zoom: 12,
+            center: _initMap_global.center,
+            maxBounds:L.latLngBounds(L.latLng(_initMap_global.bounds.minx,_initMap_global.bounds.miny),L.latLng(_initMap_global.bounds.maxx,_initMap_global.bounds.maxy)),
+            zoom: _initMap_global.defaultZoom,
+            minZoom:_initMap_global.minZoom,
+            maxZoom:_initMap_global.maxZoom,
             zoomControl: false,
             attributionControl: false
         });
