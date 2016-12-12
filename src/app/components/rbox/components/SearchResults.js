@@ -102,19 +102,21 @@ class SearchResults extends Component {
     componentDidUpdate(prevProps, prevState) {
         markers.clearLayers();
         mouseOverMaker.clearLayers();
-        const pois = this.props.data.pois;
-        pois.map((poi, index) => {
-            let poiIcon = L.divIcon({
-                html: "<span>" + (index + 1) + '</span>',
-                className: 'poiIcon',
-                iconSize: [32, 32]
-            });
-            let imgSrc = '';
-            if (poi.photos.length > 0) { imgSrc = poi.photos[0].url } else { imgSrc = '' };
-            let poiPopup = L.popup().setContent("<p>名称:" + poi.name + "</p><p>地址:" + poi.address + "</p><p>电话:" + poi.tel + "</p><img src='" + imgSrc + "' class='poiImg'/>");
-            markers.addLayer(L.marker(poi.location.split(',').reverse(), { icon: poiIcon, id: index + 1 }).bindPopup(poiPopup)).bindTooltip(poi.name);
-        })
-        lrmap.addLayer(markers);
+        if (this.props.data) {
+            const pois = this.props.data.pois;
+            pois.map((poi, index) => {
+                let poiIcon = L.divIcon({
+                    html: "<span>" + (index + 1) + '</span>',
+                    className: 'poiIcon',
+                    iconSize: [32, 32]
+                });
+                let imgSrc = '';
+                if (poi.photos.length > 0) { imgSrc = poi.photos[0].url } else { imgSrc = '' };
+                let poiPopup = L.popup().setContent("<p>名称:" + poi.name + "</p><p>地址:" + poi.address + "</p><p>电话:" + poi.tel + "</p><img src='" + imgSrc + "' class='poiImg'/>");
+                markers.addLayer(L.marker(poi.location.split(',').reverse(), { icon: poiIcon, id: index + 1 }).bindPopup(poiPopup)).bindTooltip(poi.name);
+            })
+            lrmap.addLayer(markers);
+        }
     }
 
 }
