@@ -26,18 +26,22 @@ class Map extends React.Component {
     componentDidMount() {
         let lrmap = L.map("map", {
             center: _initMap_global.center,
-            maxBounds:L.latLngBounds(L.latLng(_initMap_global.bounds.minx,_initMap_global.bounds.miny),L.latLng(_initMap_global.bounds.maxx,_initMap_global.bounds.maxy)),
+            maxBounds: L.latLngBounds(L.latLng(_initMap_global.bounds.minx, _initMap_global.bounds.miny), L.latLng(_initMap_global.bounds.maxx, _initMap_global.bounds.maxy)),
             zoom: _initMap_global.defaultZoom,
-            minZoom:_initMap_global.minZoom,
-            maxZoom:_initMap_global.maxZoom,
+            minZoom: _initMap_global.minZoom,
+            maxZoom: _initMap_global.maxZoom,
             zoomControl: false,
             attributionControl: false
         });
-        let basemapLayer = new L.TileLayer('https://a.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpbG10dnA3NzY3OTZ0dmtwejN2ZnUycjYifQ.1W5oTOnWXQ9R1w8u3Oo1yA', {
-            id: 'streetLayer',
-            errorTileUrl:'img/errorTile.png'
-        }).addTo(lrmap);
-
+        for (let i = 0, len = _layer_global.baseLayer.length; i < len; i++) {
+            if (_layer_global.baseLayer[i].show === true) {
+                let basemapLayer = new L.TileLayer(_layer_global.baseLayer[i].url, {
+                    id: _layer_global.baseLayer[i].id,
+                    errorTileUrl: 'img/errorTile.png'
+                }).addTo(lrmap);
+            }
+        }
+        
         L.control.scale().addTo(lrmap);
         let zoomControl = L.control.zoom({
             position: 'bottomright'

@@ -55,22 +55,69 @@ class LayerCtrl extends Component {
     constructor(props) {
         super(props);
     }
-    handleToggle(layerId){
-
+    handleToggle(layerId) {
+        let layer = this.hasLayer(layerId);
+        if (layer) {
+            lrmap.removeLayer(layer);
+            for (let i = 0, len = _layer_global.baseLayer.length; i < len; i++) {
+                if (_layer_global.baseLayer[i].id != layerId) {
+                    _layer_global.baseLayer[i].show = true;
+                    let basemapLayer = new L.TileLayer(_layer_global.baseLayer[i].url, {
+                        id: _layer_global.baseLayer[i].id,
+                        errorTileUrl: 'img/errorTile.png'
+                    }).addTo(lrmap);
+                } else {
+                    _layer_global.baseLayer[i].show = false;
+                }
+            }
+        } else {
+            for (let i = 0, len = _layer_global.baseLayer.length; i < len; i++) {
+                if (_layer_global.baseLayer[i].id === layerId) {
+                    _layer_global.baseLayer[i].show = true;
+                    let basemapLayer = new L.TileLayer(_layer_global.baseLayer[i].url, {
+                        id: _layer_global.baseLayer[i].id,
+                        errorTileUrl: 'img/errorTile.png'
+                    }).addTo(lrmap);
+                }
+            }
+        }
+    }
+    hasLayer(layerId) {
+        let lay;
+        lrmap.eachLayer(function (layer) {
+            if (layer.options.id === layerId) {
+                lay = layer;
+            }
+        })
+        return lay;
     }
     /**
-     * @param {array} baseLayer
+     * @param {array} Layers
      * @returns {array}layerArr 
      * @doc 根据父节点创建子节点主数组
      * @memberOf LayerCtrl
      */
-    createItemsArr(baseLayer) {
+    createItemsArr(Layers) {
         let layerArr = [];
-        layerArr = baseLayer.map((layer) => {
+        layerArr = Layers.map((layer) => {
             return <ListItem
                 key={layer.url}
                 primaryText={layer.name}
-                leftAvatar={<img src={layer.img}  style={styles.avatar} />}
+                leftAvatar={<img src={layer.img} style={styles.avatar} />}
+                rightToggle={<Toggle defaultToggled={layer.show} onClick={() => this.handleToggle(layer.id)} />}
+                style={styles.listItem}
+                />
+        })
+        return layerArr;
+    }
+
+    createDeviceLayerArr(Layers) {
+        let layerArr = [];
+        layerArr = Layers.map((layer) => {
+            return <ListItem
+                key={layer.url}
+                primaryText={layer.name}
+                leftAvatar={<img src={layer.img} style={styles.avatar} />}
                 rightToggle={<Toggle defaultToggled={layer.show} onClick={() => this.handleToggle(layer.id)} />}
                 style={styles.listItem}
                 />
@@ -84,19 +131,19 @@ class LayerCtrl extends Component {
                 <MobileTearSheet>
                     <ListItem
                         primaryText="基础图层"
-                        leftIcon={<ContentInbox color={blue500}/>}
+                        leftIcon={<ContentInbox color={blue500} />}
                         initiallyOpen={false}
                         primaryTogglesNestedList={true}
                         style={styles.listRoot}
-                        nestedItems={this.createItemsArr(_layer_global.baseLayer)}
+                        nestedItems={this.createItemsArr(this.props.layers.baseLayer)}
                         />
                     <ListItem
                         primaryText="叠加图层"
-                        leftIcon={<ContentInbox color={blue500}/>}
+                        leftIcon={<ContentInbox color={blue500} />}
                         initiallyOpen={true}
                         primaryTogglesNestedList={true}
                         style={styles.listRoot}
-                        nestedItems={this.createItemsArr(_layer_global.deviceLayer)}
+                        nestedItems={this.createDeviceLayerArr(this.props.layers.deviceLayer)}
                         />
                 </MobileTearSheet>
             </div>

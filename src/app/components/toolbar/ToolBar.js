@@ -44,7 +44,7 @@ class ToolBar extends Component {
                         item: <div />,
                         key: 0
                     }) : this.setState({
-                        item: <LayerCtrl />,
+                        item: <LayerCtrl layers={_layer_global} />,
                         key: liId
                     });
                 break;
