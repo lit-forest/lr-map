@@ -32,3 +32,11 @@ function arrToString(arr) {
     }
     return geo;
 }
+
+// 反面示例
+setTimeout("myFunc()", 1000);
+setTimeout("myFunc(1, 2, 3)", 1000);
+
+// 更好的
+function MyConstructor() { }
+function myFunction() { }
