@@ -26,11 +26,11 @@ export const drawEnable = (onDrawEnd) => {
                     text: '撤销'
                 },
                 buttons: {
-                    polyline: '绘制线',
-                    polygon: '绘制多边形',
-                    rectangle: '绘制矩形',
-                    circle: '绘制圆',
-                    marker: '绘制点'
+                    polyline: '',
+                    polygon: '',
+                    rectangle: '',
+                    circle: '',
+                    marker: ''
                 }
             },
             handlers: {

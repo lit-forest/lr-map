@@ -111,7 +111,7 @@ class SearchResults extends Component {
                     iconSize: [32, 32]
                 });
                 let imgSrc = '';
-                if (poi.photos.length > 0) { imgSrc = poi.photos[0].url } else { imgSrc = '' };
+                if (poi.photos&&poi.photos.length > 0) { imgSrc = poi.photos[0].url } else { imgSrc = '' };
                 let poiPopup = L.popup().setContent("<p>名称:" + poi.name + "</p><p>地址:" + poi.address + "</p><p>电话:" + poi.tel + "</p><img src='" + imgSrc + "' class='poiImg'/>");
                 markers.addLayer(L.marker(poi.location.split(',').reverse(), { icon: poiIcon, id: index + 1 }).bindPopup(poiPopup)).bindTooltip(poi.name);
             })
