@@ -1,6 +1,8 @@
 ## lr-map 
 为了解决目前在地图项目上面临的功能结构划分不够清晰,各模块功能代码杂糅在一起,地图展示不够简单易用而开发,整个项目的目的是为了建立基本的地图功能和逻辑结构划分,以方便以后的扩展和维护,主要采用技术为React,React-Route,Leaflet等.      
-
+<div style="text-align:center" align="center">
+  <img src="https://react-map.github.io/demo/lr-map.png" />
+</div>  
 ## 技术栈
 * [ECMAScript](https://github.com/lukehoban/es6features)
 * [react](https://github.com/facebook/react)
@@ -11,9 +13,6 @@
 * [react-router-redux](https://github.com/rackt/react-router-redux)
 * [webpack](https://github.com/webpack/webpack)
 * [babel](https://github.com/babel/babel)
-* [express](https://github.com/expressjs/express)
-* [karma](https://github.com/karma-runner/karma)
-* [eslint](http://eslint.org)   
 
 ##开发环境配置
 * node `^4.5.0`
